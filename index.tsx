@@ -123,9 +123,9 @@ const App = () => {
         </div>
 
         {/* Part 1 */}
-        <SectionHeader 
-          id="part1" 
-          title="Part 1: Taking the Pulse of the Network" 
+        <SectionHeader
+          id="part1"
+          title="Part 1: Taking the Pulse of the Network"
           subtitle="Before analyzing language styles, we looked at the raw heartbeat of Reddit's 'Meta-Layer'—the network of cross-posts and mentions."
         />
 
@@ -143,8 +143,8 @@ const App = () => {
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
                 <XAxis dataKey="time" axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 12}} />
                 <YAxis axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 12}} />
-                <Tooltip 
-                  contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)'}} 
+                <Tooltip
+                  contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)'}}
                 />
                 <Legend iconType="circle" />
                 <Line type="monotone" dataKey="titles" stroke="#f97316" strokeWidth={3} dot={false} activeDot={{ r: 6 }} name="Title Hyperlinks" />
@@ -263,9 +263,9 @@ const App = () => {
         </div>
 
         {/* Part 2 */}
-        <SectionHeader 
-          id="part2" 
-          title="Part 2: The Five Dialects of Reddit" 
+        <SectionHeader
+          id="part2"
+          title="Part 2: The Five Dialects of Reddit"
           subtitle="We engineered over 86 linguistic features—ranging from sentence complexity and readability to usage of swear words and pronouns—and applied K-Means Clustering."
         />
 
@@ -331,9 +331,9 @@ const App = () => {
         </div>
 
         {/* Part 3 */}
-        <SectionHeader 
-          id="part3" 
-          title="Part 3: The Geography of Conflict" 
+        <SectionHeader
+          id="part3"
+          title="Part 3: The Geography of Conflict"
           subtitle="Finally, we overlapped our 'Linguistic Map' with the 'Interaction Network.' Do people only talk to those who speak their language?"
         />
 
@@ -366,7 +366,7 @@ const App = () => {
                   <div className="text-center text-xs font-bold text-gray-400">C1</div>
                   <div className="text-center text-xs font-bold text-gray-400">C3</div>
                   <div className="text-center text-xs font-bold text-gray-400">C4</div>
-                  
+
                   <div className="text-right text-xs font-bold text-gray-400 pr-2">C1 (S)</div>
                   <div className="h-16 bg-indigo-500 rounded-sm flex items-center justify-center text-white text-xs">High</div>
                   <div className="h-16 bg-indigo-300 rounded-sm flex items-center justify-center text-white text-xs">Med</div>
@@ -406,7 +406,7 @@ const App = () => {
             <h2 className="text-4xl font-bold mb-8">Conclusion</h2>
             <div className="space-y-6 text-xl text-gray-300 leading-relaxed font-light">
               <p>
-                Our journey through the data reveals that Reddit is not just divided by topic, but by style. 
+                Our journey through the data reveals that Reddit is not just divided by topic, but by style.
               </p>
               <ul className="space-y-4 mt-8 border-l-2 border-orange-500/50 pl-8">
                 <li><span className="text-orange-400 font-bold">The Meta-Layer drives the network:</span> A few massive communities curate the content for everyone else.</li>
