@@ -47,11 +47,14 @@ jobs:
       - name: Build React app
         run: npm run build
         
-      - name: Copy dist to Jekyll
+      - name: Prepare for Jekyll
         run: |
-          mkdir -p assets
-          cp -r dist/* assets/
-        
+          # Copy built assets
+          mkdir -p assets  
+          cp -r dist/assets/* assets/
+          # Use Vite's generated index.html as base
+          cp dist/index.html index.html.tmp
+          
       - name: Build Jekyll site
         run: bundle exec jekyll build
         env:

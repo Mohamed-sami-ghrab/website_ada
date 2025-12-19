@@ -55,22 +55,14 @@
             border-bottom: 1px solid #e5e7eb;
         }
     </style>
-    
-    <!-- Vite built CSS (will be generated after npm run build) -->
-    {% for file in site.static_files %}
-      {% if file.path contains '/assets/' and file.extname == '.css' %}
-        <link rel="stylesheet" href="{{ site.baseurl }}{{ file.path }}">
-      {% endif %}
-    {% endfor %}
 </head>
 <body>
     <div id="root"></div>
     
-    <!-- Vite built JavaScript (will be generated after npm run build) -->
-    {% for file in site.static_files %}
-      {% if file.path contains '/assets/' and file.path contains 'index' and file.extname == '.js' %}
-        <script type="module" src="{{ site.baseurl }}{{ file.path }}"></script>
-      {% endif %}
+    <!-- Find and load all JS files from assets -->
+    {% assign js_files = site.static_files | where_exp: "file", "file.path contains '/assets/'" | where_exp: "file", "file.extname == '.js'" %}
+    {% for file in js_files %}
+      <script type="module" crossorigin src="{{ site.baseurl }}{{ file.path }}"></script>
     {% endfor %}
     
     {{ content }}
