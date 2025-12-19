@@ -1,0 +1,40 @@
+# Jekyll configuration for Reddit Network Analysis Project
+title: The Grammar of the Hivemind
+description: A Data Journalism Inquiry - Mapping the Hidden Structure of Reddit
+baseurl: "/website_ada"
+url: "https://mohamed-sami-ghrab.github.io"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude files from Jekyll processing
+exclude:
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - tsconfig.json
+  - vite.config.ts
+  - index.tsx
+  - README.md
+  - .git/
+  - .gitignore
+  - src/
+  - Gemfile
+  - Gemfile.lock
+  - DEPLOYMENT.md
+  - QUICKSTART.md
+
+# Include hidden files/folders (if needed)
+include:
+  - _layouts
+  - dist
+
+# Where to put the built assets
+destination: _site
+
+# Keep the dist folder assets when building
+keep_files:
+  - dist
