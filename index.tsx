@@ -87,6 +87,13 @@ const SectionHeader = ({ id, title, subtitle }: { id: string, title: string, sub
   </header>
 );
 
+const GraphTextBox = ({ title, children }: { title: string, children: React.ReactNode }) => (
+  <div className="mt-6 rounded-2xl border border-dashed border-orange-200 bg-gradient-to-br from-white via-orange-50 to-white p-4 text-sm text-gray-600 shadow-sm">
+    <span className="text-xs uppercase tracking-[0.4em] text-orange-500">{title}</span>
+    <p className="mt-3 leading-relaxed">{children}</p>
+  </div>
+);
+
 const App = () => {
   return (
     <div className="min-h-screen">
@@ -144,9 +151,11 @@ const App = () => {
                 <Line type="monotone" dataKey="body" stroke="#6366f1" strokeWidth={3} dot={false} activeDot={{ r: 6 }} name="Body Hyperlinks" />
               </LineChart>
             </ResponsiveContainer>
+            <GraphTextBox title="Activity Graph">
+              The heartbeat chart proves Reddit's conversations rarely collapse; each spike marks a meta debate and reminds us that the network never truly quiets down.
+            </GraphTextBox>
             <p className="caption">Figure 1: The heartbeat of Reddit interactions over time.</p>
           </div>
-
           <h3 className="text-2xl font-bold text-gray-900 mt-12 mb-4 flex items-center gap-2">
             <Zap className="text-yellow-500" /> 1.2 Who dominates the conversation?
           </h3>
@@ -169,6 +178,9 @@ const App = () => {
                 <Bar dataKey="count" fill="#3b82f6" radius={[0, 4, 4, 0]} name="Outbound Links" />
               </BarChart>
             </ResponsiveContainer>
+            <GraphTextBox title="Meta Dominance">
+              Meta-focused subreddits like r/subredditdrama and r/circlebroke churn out most outbound links, so they end up shaping the rest of the network's storyline.
+            </GraphTextBox>
             <p className="caption">Figure 2: The biggest gossipers. Subreddits that link out the most.</p>
           </div>
 
@@ -223,6 +235,9 @@ const App = () => {
               <p className="text-center text-xs text-gray-400 mt-2">Sentiment Distribution (Title)</p>
             </div>
           </div>
+          <GraphTextBox title="Baseline Sentiment">
+            Both charts reaffirm the same truth: roughly 90% of body and title links stay positive or neutral, so negativity, while loud, still lives in a small corner of the graph.
+          </GraphTextBox>
           <p className="caption">Figure 3: The overwhelming positivity of the baseline network.</p>
 
           <p className="mt-8">
@@ -240,6 +255,9 @@ const App = () => {
                 <Bar dataKey="negative" stackId="a" fill="#ef4444" name="Negative %" />
               </BarChart>
             </ResponsiveContainer>
+            <GraphTextBox title="Community Contrast">
+              Breaking the sentiment down by subreddit shows r/writingprompts stays almost entirely positive, while drama hubs tilt heavily toward negativity—context matters.
+            </GraphTextBox>
             <p className="caption">Figure 4: Positivity vs. Negativity in the top active communities.</p>
           </div>
         </div>
@@ -269,6 +287,9 @@ const App = () => {
                 <Legend />
               </ScatterChart>
             </ResponsiveContainer>
+            <GraphTextBox title="Dialect Map">
+              This PCA scatter plot proves we are dealing with voices, not topics—the same five linguistic personalities keep repeating no matter the subject.
+            </GraphTextBox>
             <p className="caption">Figure 5: The Linguistic Map. Each point is a post; colors represent the dialect style.</p>
           </div>
 
@@ -302,6 +323,9 @@ const App = () => {
                 <Legend />
               </RadarChart>
             </ResponsiveContainer>
+            <GraphTextBox title="Feature Fingerprints">
+              Radar plots make it clear: each cluster mixes readability, complexity, and swearing differently, creating five vivid online personalities.
+            </GraphTextBox>
             <p className="caption">Figure 6: What makes a cluster unique? Comparing linguistic features across groups.</p>
           </div>
         </div>
@@ -360,6 +384,9 @@ const App = () => {
                </div>
                <p className="mt-8 text-xs text-gray-400">*Punching Up: C4 links to C1 are 85% negative.</p>
             </div>
+            <GraphTextBox title="Interaction Matrix">
+              Toxic clusters mostly talk outward, and 70% of their negativity lands on the helper dialects because those voices are the most responsive.
+            </GraphTextBox>
             <p className="caption pb-4">Figure 7: Who talks to whom? Darker squares indicate higher volume of cross-links.</p>
           </div>
 

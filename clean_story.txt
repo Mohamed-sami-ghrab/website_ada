@@ -1,0 +1,356 @@
+"The Language Paradox of Reddit: Why Toxic Communities Don't Talk Simpler (And What That Tells Us About Online Discourse)"
+
+Opening Hook:                        
+"Picture this: It's 2015. Somewhere on Reddit, someone is FURIOUS. They're about to write the angriest comment of their life. Quick—what do they write?
+A) 'THIS IS COMPLETE GARBAGE!!!'
+ B) 'I find your methodology profoundly inadequate and your conclusions demonstrably erroneous.'
+If you picked A... you're wrong. And that's the mystery we're solving today."
+
+We tend to assume that when people get angry, they get stupid. We imagine the "Internet Troll" as a caveman smashing a keyboard—using short words, broken grammar, and all-caps shouting.
+We assume toxicity looks like this: “YOU SUCK!”
+But what if the most toxic Reddit communities are actually... sophisticated? What if they use the same sentence structures, the same vocabulary depth, and the same linguistic flair as the friendliest communities?
+Introduction
+In this project, we analyzed the Reddit Hyperlink Network, a massive graph of over 850,000 connections where one subreddit links to another. By analyzing the language of these links, we set out to answer a fundamental question: Does the way a community speaks determine who they talk to?
+We analyzed 1 million *(check if really 1 million! ) interactions, expecting to find that negative posts use simpler language. We were wrong. Instead, we discovered that being smart doesn't make you nice.
+# activity graph
+Reddit is often described as a collection of silos—thousands of distinct communities (subreddits) dedicated to everything from r/aww to r/dataisbeautiful and growing day after days. But these silos aren't hermetically sealed. They leak. They link. They argue.
+# get smoother transition
+
+Act I: The Personalities of Reddit
+
+First characterisation: features selection : 
+	
+	32 linguistic features (from the full datasets) : Clustering (slihouette score => 5 clusters) => PCA => visualize boat plot
+
+Now we have the 5 clusters => 5 personalities, 
+
+Now interpretation of 5 clusters * spider plots *: with diff kind of people
+
+	=> first spider plot which clusters correspond to which language type (next to definition of characters (storytellers, tech support etc)
+
+Reddit isn't one place. It's five distinct linguistic worlds. Our algorithm didn't look at what they were talking about (games, politics, makeup), but how they were talking. Who look like each other ?OMG REDDIT IS SHAPPED WITH 5 MAIN PERSONNALITES, DATA IS TELLING THIS O.M.G.
+	=> interactive plot see examples of subreddit (galaxy scatter plot (big circle with circle in it)
+
+Each character represented as a Reddit avatar with speech bubbles: (visualize these with tables, and specification each clusters USE MILESTONE 3 CLUSTER INTERPRETATION)
+1. The Storytellers (The Bards) 📜
+Signature Move: Wall-of-text posts
+Catchphrase: "Let me tell you a story..."
+Habitat: r/WritingPrompts, r/nosleep
+Weapon of Choice: Overwhelming detail
+Complexity Score: 8/10 (long but structured)
+2. The Tech Support (The Helpers) 🛠️
+Signature Move: Step-by-step guides
+Catchphrase: "Have you tried turning it off and on again?"
+Habitat: r/techsupport, r/buildapc
+Weapon of Choice: Cheerful instructions
+Complexity Score: 5/10 (clear and simple)
+Plot Twist: Everyone wants to talk to them!
+3. The Chatterboxes (The Normies) 🗣️
+Signature Move: Complex social exchanges
+Catchphrase: "Well, actually..."
+Habitat: Default subs, discussion forums
+Weapon of Choice: Long sentences with multiple clauses
+Complexity Score: 7/10 (sophisticated structure)
+4. The Professors (The Analysts) 🧐
+Signature Move: Measured, cautious discourse
+Catchphrase: "According to my analysis..."
+Habitat: r/OutOfTheLoop, r/explainlikeimfive
+Weapon of Choice: Big words, careful phrasing
+Complexity Score: 9/10 (highest sophistication)
+5. The Firestarters (The Drama Queens) 🔥
+Signature Move: Emotional intensity
+Catchphrase: "ARE YOU KIDDING ME?!"
+Habitat: r/SubredditDrama, r/circlebroke
+Weapon of Choice: Swear words, anger, anxiety
+Complexity Score: 6/10 ← THIS IS THE TWIST!
+
+QUIZZ WHAT KIND ARE YOU, ARE YOU RARE ? (of course but say it differently)
+
+smooth transition : obvious idea : positive message => high complexity
+
+
+
+Act II: The Paradox
+
+create complexity metrics : new metrics : lexical_diversity… describe the metrics and why these ones ?
+
+=> 2 approches : 1. PCA to get best features over new features created (maybe correlate and want to correlate, not all useful)
+		2. Use those computed metrics 
+
+To compare: metrics distribution with pos/neg avec PCA, complexity score
+
+interpretation : no différence 
+Narrative Hook:
+"We tested EVERYTHING:
+Vocabulary sophistication ❌
+Sentence complexity ❌
+Readability scores ❌
+Word length ❌
+None of it predicted whether someone was being nice or mean."
+(Narrative Text)
+This is where the data surprised us. We expected the angry, toxic cluster (The Firestarters) to have the linguistic fingerprint of a toddler.
+We were wrong.
+The Firestarters don't use simpler words. They don't use shorter sentences. They don't abandon grammar. They are just as articulate as the people helping you fix your computer.
+This creates a dangerous "Camouflage Effect." Toxic comments often look authoritative because they are structurally sound. A well-written insult stings more than a poorly written one.
+=> How do we actually find the best feature ?
+
+Find the best feautres
+Best dicriminative features : podium (kahoot vibe) => Complexity doesn’t matter => Then how do predict neg/pos message ?
+
+
+Act III: What Actually Matters
+(Narrative Text)
+If complexity can't predict toxicity, what can?
+Look at correlation ( cohen’s d ) “Top 6 discriminated features”
+We trained a model to guess which features is the best to predict pos/neg posts 
+Find the best features => RF (plots)
+
+The Takeaway: Sentiment lives in the dictionary, not the grammar book. You can build a sentence with the architectural complexity of a cathedral, but if the bricks are made of malice, it's still a toxic structure.
+Sentiment works great, linguistic study already done.
+Complexity has no impact on toxicity ? => However can we find negativite communities with both complex and simple language then ? => Negative communities with different personalities, different roles => extend complexity to personnality 
+
+Act IV: The Network Doesn't Lie
+
+Narrative text : We are lost ! We thought complexity was going to explain everything !! But we were wrong ! Let’s comeback to our clusters of Act 1… How do they interact with each others ? We had a negative cluster that is characterized with exactly the same features that we found in our Random Tree Forest that we found in Act 3. What if negativity is about interaction between different groups more than the way we write the message ? 
+
+=> Network graph => Interactive network graph, clusters
+
+Interpretation => Negative outsource flow => mostly negative  
+
+=> Then cluster 0 represent negative message, negative people, negative communities.
+
+
+
+For Interpretation highlight where does one arrow goes to which cluster and where does 
+Who are the toxic people yelling at?
+*here also can be a quiz with possible answers as 5 clusters*
+You might think toxic communities are isolated "echo chambers" screaming into the void. The data says otherwise.
+
+70% of toxic interactions are directed at the Helpful cluster.
+Why? Because toxicity requires an audience. And the Helpers are the most responsive audience on the internet.
+
+The Conclusion: What This Means for the Internet
+Visual: Split-screen comparison
+Left: "What we thought"
+Angry = Simple language
+Smart = Complex language
+Communities self-segregate
+Right: "What we found"
+Angry = Different words, same complexity
+Intelligence ≠ sentence length
+Communities mix constantly
+The Takeaway:
+"The Language Paradox of Reddit:
+Toxicity isn't linguistic simplicity - Angry people use equally complex grammar
+Sentiment lives in vocabulary, not structure - It's WHAT you say, not HOW you say it
+Echo chambers aren't language-based - All styles interact freely
+Why this matters:
+Content moderation tools should focus on words, not complexity
+Education about online discourse needs updating (it's not 'dumbed down')
+The internet doesn't make us speak simpler... just more emotionally"
+
+
+
+
+
+
+
+
+
+
+
+The Language Paradox of Reddit
+Why Toxic Communities Don’t Talk Simpler (And What That Tells Us About Online Discourse)
+
+Opening — When Anger Sounds Intelligent
+Picture this.
+ It’s 2015. Somewhere on Reddit, someone is furious. Not mildly annoyed. Furious.
+ They’re about to write the angriest comment of their online life.
+Quick — what do they write?
+A) “THIS IS COMPLETE GARBAGE!!!”
+ B) “I find your methodology profoundly inadequate and your conclusions demonstrably erroneous.”
+If you picked A, you’re not alone. Most of us carry the same mental image of online anger: short words, broken grammar, caps lock rage.
+ 
+The internet troll as a keyboard-smashing caveman, but when we actually looked at the data, something strange happened.
+We didn’t find chaos. We found paragraphs. Carefully structured sentences. Anger, delivered with perfect grammar. And that’s the mystery we’re here to solve.
+
+Introduction — A Crime Scene Made of Words
+Our crime scene is Reddit itself: over 850,000 connections where one subreddit links to another, spanning from 2013 to 2016.
+ Each link carries language. Tone. Intent.
+In total, we analyzed nearly one million interactions, expecting to confirm a comforting belief: that negativity online goes hand in hand with linguistic simplicity.
+It didn’t.
+Instead, the data forced us to confront a far more uncomfortable idea:
+ being articulate doesn’t make you kind.
+What if toxic communities don’t speak worse — just differently?
+ And what if the way communities interact matters more than how long their sentences are?
+
+Interlude — Reddit Is Not a Collection of Islands
+Reddit is often described as a set of silos: thousands of isolated communities, each talking to itself. 
+ But silos leak.
+ They quote each other.
+ They argue.
+ They link.
+Before diving into language, we zoomed out.
+[GRAPH: Activity / Interaction graph over time]
+<div class="flourish-embed flourish-chart" data-src="visualisation/26870895"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26870895/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+What we saw was not isolation, but constant movement.
+ Communities collide. Advice flows. Criticism travels faster.
+Reddit isn’t quiet. It’s conversational.
+And that’s where the story really begins.
+
+Act I — The Personalities of Reddit
+We stopped asking what people were talking about and started asking how.
+Ignoring topics entirely, we focused on 32 linguistic features: sentence length, vocabulary diversity, emotional markers, grammatical structure.
+ No politics. No memes. Just language.
+We clustered posts based purely on how they were written.
+The algorithm hesitated… and then settled.
+Five clusters.
+ Five linguistic personalities.
+[GRAPH: PCA / “boat plot” showing 5 clusters]
+This wasn’t subtle.
+ Reddit doesn’t just have communities — it has voices.
+[GRAPH: Radar / spider plots for clusters]
+Each cluster came with a distinct linguistic fingerprint.
+ Not better. Not worse. Just different.
+Reddit, it turns out, is shaped by five main language worlds.
+And yes — we also stopped and said: “Wait… this is real.”
+
+Meet the Cast — Five Ways of Speaking Online
+1. The Storytellers (The Bards) 📜
+They write like they’re on a stage.
+Long posts. Structured narratives. Rich detail.
+ Their weapon isn’t aggression — it’s immersion.
+Catchphrase: “Let me tell you a story…”
+ Complexity: High, but controlled
+
+2. The Helpers (Tech Support) 🛠️
+Clear. Efficient. Patient.
+They explain. They guide. They respond.
+ And crucially: everyone talks to them.
+Catchphrase: “Have you tried turning it off and on again?”
+ Complexity: Moderate, optimized for clarity
+
+3. The Chatterboxes (The Normies) 🗣️
+Social, verbose, conversational.
+They debate. They qualify. They digress.
+ Language as social glue.
+Catchphrase: “Well, actually…”
+ Complexity: Socially sophisticated
+
+4. The Analysts (The Professors) 🧐
+Careful phrasing. Big words. Measured tone.
+They sound authoritative — even when they’re wrong.
+Catchphrase: “According to my analysis…”
+ Complexity: The highest of all
+
+5. The Firestarters (The Drama Queens) 🔥
+Here comes the twist.
+They swear. They emote. They escalate.
+ But they don’t abandon structure.
+Catchphrase: “ARE YOU KIDDING ME?!”
+ Complexity: Surprisingly high
+This is where our assumption quietly died.
+
+[INTERPRETATION — to be completed]
+What do these personalities mean socially?
+ Are they roles? Strategies? Cultural norms?
+
+Act II — The Paradox of Complexity
+At this point, we were confident.
+Surely, if we measure linguistic complexity precisely enough, toxicity will reveal itself.
+So we built complexity metrics:
+lexical diversity
+
+
+sentence structure
+
+
+readability
+
+
+syntactic depth
+
+
+Then we tested everything.
+[GRAPH: Distributions of complexity metrics for positive vs negative posts]
+Nothing.
+No meaningful difference.
+ Not vocabulary.
+ Not sentence length.
+ Not readability.
+Angry posts are not linguistically simpler.
+The Firestarters don’t talk like toddlers.
+ They talk like frustrated professionals.
+This creates a dangerous illusion:
+ well-written hostility sounds authoritative.
+
+[INTERPRETATION — to be completed]
+Why do we trust structure so easily?
+ Is clarity mistaken for credibility?
+
+Act III — What Actually Predicts Negativity
+If complexity doesn’t matter… what does?
+We changed strategy.
+Instead of structure, we looked at words themselves.
+Using correlation measures and a Random Forest model, we asked a simpler question:
+Which features actually discriminate positive from negative messages?
+[GRAPH: Top discriminative features — “podium” / RF importance]
+The answer was blunt.
+Sentiment lives in the dictionary, not the grammar book.
+Emotion words. Negations. Anxiety. Anger. Certainty.
+ Not how sentences are built — but what they’re built from.
+You can construct a cathedral of syntax with bricks made of malice.
+
+[INTERPRETATION — to be completed]
+Does this change how we think about moderation tools?
+ About “civil” toxicity?
+
+Act IV — The Network Doesn’t Lie
+Confused, we went back to where this started:
+ the five personalities.
+If toxicity isn’t about complexity, maybe it’s about interaction.
+So we aggregated the Reddit network by language personality.
+[GRAPH: Interactive network graph between clusters]
+The result shattered another myth.
+Toxic communities aren’t isolated echo chambers.
+They’re outward-facing.
+And most of their negativity goes one place.
+Nearly 70% of toxic interactions target the Helpers.
+Why?
+Because toxicity needs an audience.
+ And Helpers always answer.
+
+[INTERPRETATION — to be completed]
+Is helpfulness a vulnerability?
+ Does responsiveness invite aggression?
+
+Conclusion — What This Means for the Internet
+What we thought:
+Angry = simple language
+
+
+Smart = long sentences
+
+
+Communities self-segregate
+
+
+What we found:
+Anger wears polished grammar
+
+
+Intelligence ≠ kindness
+
+
+Everyone talks to everyone
+
+
+The Language Paradox of Reddit is simple:
+The internet doesn’t make us speak simpler.
+ It makes us speak more emotionally.
+And that distinction matters.
+For moderation.
+ For education.
+ For how we read each other online.
+Because sometimes, the most dangerous sentence is not the loudest one —
+ but the calmest.
