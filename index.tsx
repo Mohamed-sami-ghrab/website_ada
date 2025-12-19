@@ -2,6 +2,8 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Share2, Github, BookOpen } from 'lucide-react';
 
+const assetBase = import.meta.env.BASE_URL ?? '/';
+
 const personalities = [
   {
     name: 'The Storytellers',
@@ -191,7 +193,7 @@ const App = () => (
                   <p className="text-sm font-semibold text-[#101828]">Spider plot of language cluster |z|-scores</p>
                   <div className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
                     <iframe
-                      src="/spider_plot.html"
+                      src={`${assetBase}spider_plot.html`}
                       title="Spider plot of language cluster statistics"
                       className="h-[420px] w-full"
                       loading="lazy"
@@ -206,7 +208,7 @@ const App = () => (
               {index === 1 && (
                 <figure className="rounded-2xl border border-[#ecebe7] bg-[#fdfaf6] p-5">
                   <img
-                    src="/link_sentiment.png"
+                    src={`${assetBase}link_sentiment.png`}
                     alt="Link sentiment repartition between clusters"
                     className="h-64 w-full rounded-2xl object-cover"
                     loading="lazy"
