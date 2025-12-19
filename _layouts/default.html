@@ -58,7 +58,7 @@
     
     <!-- Vite built CSS (will be generated after npm run build) -->
     {% for file in site.static_files %}
-      {% if file.path contains 'dist/assets' and file.extname == '.css' %}
+      {% if file.path contains '/assets/' and file.extname == '.css' %}
         <link rel="stylesheet" href="{{ site.baseurl }}{{ file.path }}">
       {% endif %}
     {% endfor %}
@@ -68,7 +68,7 @@
     
     <!-- Vite built JavaScript (will be generated after npm run build) -->
     {% for file in site.static_files %}
-      {% if file.path contains 'dist/assets' and file.path contains 'index' and file.extname == '.js' %}
+      {% if file.path contains '/assets/' and file.path contains 'index' and file.extname == '.js' %}
         <script type="module" src="{{ site.baseurl }}{{ file.path }}"></script>
       {% endif %}
     {% endfor %}

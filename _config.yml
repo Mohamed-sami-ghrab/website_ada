@@ -30,11 +30,11 @@ exclude:
 # Include hidden files/folders (if needed)
 include:
   - _layouts
-  - dist
+  - assets
 
 # Where to put the built assets
 destination: _site
 
-# Keep the dist folder assets when building
+# Keep the assets folder when building
 keep_files:
-  - dist
+  - assets

@@ -47,6 +47,11 @@ jobs:
       - name: Build React app
         run: npm run build
         
+      - name: Copy dist to Jekyll
+        run: |
+          mkdir -p assets
+          cp -r dist/* assets/
+        
       - name: Build Jekyll site
         run: bundle exec jekyll build
         env:
