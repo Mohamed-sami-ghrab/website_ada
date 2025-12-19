@@ -42,7 +42,7 @@ jobs:
         uses: actions/configure-pages@v4
         
       - name: Install Node dependencies
-        run: npm ci
+        run: npm install
         
       - name: Build React app
         run: npm run build
