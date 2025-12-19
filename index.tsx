@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
+import Plotly from 'plotly.js-dist-min';
 import { Share2, Github, BookOpen } from 'lucide-react';
 
 const assetBase = import.meta.env.BASE_URL ?? '/';
@@ -94,6 +95,307 @@ const conclusionPoints = [
   'Communities interact across dialects; the hivemind never settled into isolation.',
   'Moderation tools should focus on vocabulary and sentiment, not grammatical depth.'
 ];
+
+type SpiderCluster = {
+  title: string;
+  theta: string[];
+  lineR: number[];
+  markerColor: string[];
+  markerText: string[];
+};
+
+const spiderClusters: SpiderCluster[] = [
+  {
+    title: 'Language cluster (z) 0',
+    theta: [
+      'liwc_negemo',
+      'vader_negative',
+      'liwc_anger',
+      'vader_compound',
+      'liwc_affect',
+      'liwc_swear',
+      'liwc_sad',
+      'liwc_anx',
+      'liwc_negemo'
+    ],
+    lineR: [
+      0.9999999999993628,
+      0.9237415261816958,
+      0.8534265611039502,
+      0.7894069919148711,
+      0.525878225379854,
+      0.49798241033048934,
+      0.4576589475038177,
+      0.3677941991923818,
+      0.9999999999993628
+    ],
+    markerColor: [
+      '#1f77b4',
+      '#1f77b4',
+      '#1f77b4',
+      '#d62728',
+      '#1f77b4',
+      '#1f77b4',
+      '#1f77b4',
+      '#1f77b4'
+    ],
+    markerText: [
+      '<b>liwc_negemo</b><br>z-score: +1.570<br>|z| (norm): 1.000',
+      '<b>vader_negative</b><br>z-score: +1.450<br>|z| (norm): 0.924',
+      '<b>liwc_anger</b><br>z-score: +1.339<br>|z| (norm): 0.853',
+      '<b>vader_compound</b><br>z-score: -1.239<br>|z| (norm): 0.789',
+      '<b>liwc_affect</b><br>z-score: +0.825<br>|z| (norm): 0.526',
+      '<b>liwc_swear</b><br>z-score: +0.782<br>|z| (norm): 0.498',
+      '<b>liwc_sad</b><br>z-score: +0.718<br>|z| (norm): 0.458',
+      '<b>liwc_anx</b><br>z-score: +0.577<br>|z| (norm): 0.368'
+    ]
+  },
+  {
+    title: 'Language cluster (z) 1',
+    theta: [
+      'avg_chars_per_sentence',
+      'avg_words_per_sentence',
+      'readability_index',
+      'num_chars',
+      'num_words',
+      'liwc_verbs',
+      'liwc_prep',
+      'liwc_cogmech',
+      'avg_chars_per_sentence'
+    ],
+    lineR: [
+      0.9999999999999348,
+      0.9387434856415336,
+      0.9250959200607034,
+      0.1329827125874277,
+      0.11019224797343416,
+      0.1032877958215583,
+      0.09893705702256392,
+      0.09710206592927384,
+      0.9999999999999348
+    ],
+    markerColor: ['#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4', '#d62728', '#d62728', '#d62728'],
+    markerText: [
+      '<b>avg_chars_per_sentence</b><br>z-score: +15.358<br>|z| (norm): 1.000',
+      '<b>avg_words_per_sentence</b><br>z-score: +14.417<br>|z| (norm): 0.939',
+      '<b>readability_index</b><br>z-score: +14.207<br>|z| (norm): 0.925',
+      '<b>num_chars</b><br>z-score: +2.042<br>|z| (norm): 0.133',
+      '<b>num_words</b><br>z-score: +1.692<br>|z| (norm): 0.110',
+      '<b>liwc_verbs</b><br>z-score: -1.586<br>|z| (norm): 0.103',
+      '<b>liwc_prep</b><br>z-score: -1.519<br>|z| (norm): 0.099',
+      '<b>liwc_cogmech</b><br>z-score: -1.491<br>|z| (norm): 0.097'
+    ]
+  },
+  {
+    title: 'Language cluster (z) 2',
+    theta: [
+      'liwc_cogmech',
+      'liwc_prep',
+      'liwc_verbs',
+      'liwc_conj',
+      'liwc_auxvb',
+      'liwc_relativ',
+      'liwc_article',
+      'liwc_space',
+      'liwc_cogmech'
+    ],
+    lineR: [
+      0.999999999999156,
+      0.9893289209184924,
+      0.9880080975524806,
+      0.9285694284647933,
+      0.8851223482249314,
+      0.853260136964148,
+      0.8251680254692079,
+      0.7469458876170281,
+      0.999999999999156
+    ],
+    markerColor: ['#d62728', '#d62728', '#d62728', '#d62728', '#d62728', '#d62728', '#d62728', '#d62728'],
+    markerText: [
+      '<b>liwc_cogmech</b><br>z-score: -1.185<br>|z| (norm): 1.000',
+      '<b>liwc_prep</b><br>z-score: -1.172<br>|z| (norm): 0.989',
+      '<b>liwc_verbs</b><br>z-score: -1.171<br>|z| (norm): 0.988',
+      '<b>liwc_conj</b><br>z-score: -1.100<br>|z| (norm): 0.929',
+      '<b>liwc_auxvb</b><br>z-score: -1.049<br>|z| (norm): 0.885',
+      '<b>liwc_relativ</b><br>z-score: -1.011<br>|z| (norm): 0.853',
+      '<b>liwc_article</b><br>z-score: -0.978<br>|z| (norm): 0.825',
+      '<b>liwc_space</b><br>z-score: -0.885<br>|z| (norm): 0.747'
+    ]
+  },
+  {
+    title: 'Language cluster (z) 3',
+    theta: [
+      'num_words',
+      'num_sentences',
+      'num_chars',
+      'liwc_relativ',
+      'liwc_article',
+      'liwc_space',
+      'liwc_prep',
+      'vader_negative',
+      'num_words'
+    ],
+    lineR: [
+      0.999999999999737,
+      0.9718198989625441,
+      0.9673930411953563,
+      0.1324187286017002,
+      0.12500406804400133,
+      0.12441244557074321,
+      0.12247421228047468,
+      0.10523990897132982,
+      0.999999999999737
+    ],
+    markerColor: ['#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4'],
+    markerText: [
+      '<b>num_words</b><br>z-score: +3.803<br>|z| (norm): 1.000',
+      '<b>num_sentences</b><br>z-score: +3.696<br>|z| (norm): 0.972',
+      '<b>num_chars</b><br>z-score: +3.679<br>|z| (norm): 0.967',
+      '<b>liwc_relativ</b><br>z-score: +0.504<br>|z| (norm): 0.132',
+      '<b>liwc_article</b><br>z-score: +0.475<br>|z| (norm): 0.125',
+      '<b>liwc_space</b><br>z-score: +0.473<br>|z| (norm): 0.124',
+      '<b>liwc_prep</b><br>z-score: +0.466<br>|z| (norm): 0.122',
+      '<b>vader_negative</b><br>z-score: +0.400<br>|z| (norm): 0.105'
+    ]
+  },
+  {
+    title: 'Language cluster (z) 4',
+    theta: [
+      'vader_compound',
+      'liwc_prep',
+      'liwc_cogmech',
+      'liwc_verbs',
+      'liwc_relativ',
+      'liwc_conj',
+      'liwc_auxvb',
+      'liwc_article',
+      'vader_compound'
+    ],
+    lineR: [
+      0.9999999999980768,
+      0.8502403607160691,
+      0.8302095881960183,
+      0.8104618739156569,
+      0.7664257280768189,
+      0.7518992217125737,
+      0.726800976101065,
+      0.6870113905754063,
+      0.9999999999980768
+    ],
+    markerColor: ['#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4', '#1f77b4'],
+    markerText: [
+      '<b>vader_compound</b><br>z-score: +0.520<br>|z| (norm): 1.000',
+      '<b>liwc_prep</b><br>z-score: +0.442<br>|z| (norm): 0.850',
+      '<b>liwc_cogmech</b><br>z-score: +0.432<br>|z| (norm): 0.830',
+      '<b>liwc_verbs</b><br>z-score: +0.421<br>|z| (norm): 0.810',
+      '<b>liwc_relativ</b><br>z-score: +0.398<br>|z| (norm): 0.766',
+      '<b>liwc_conj</b><br>z-score: +0.391<br>|z| (norm): 0.752',
+      '<b>liwc_auxvb</b><br>z-score: +0.378<br>|z| (norm): 0.727',
+      '<b>liwc_article</b><br>z-score: +0.357<br>|z| (norm): 0.687'
+    ]
+  }
+];
+
+const spiderTraces = spiderClusters.flatMap((cluster, clusterIndex) => {
+  const lineTrace = {
+    type: 'scatterpolar' as const,
+    name: cluster.title,
+    theta: cluster.theta,
+    r: cluster.lineR,
+    mode: 'lines' as const,
+    fill: 'toself' as const,
+    opacity: 0.25,
+    line: { width: 2 },
+    hoverinfo: 'skip' as const,
+    visible: clusterIndex === 0
+  };
+  const markerTrace = {
+    type: 'scatterpolar' as const,
+    name: `${cluster.title} markers`,
+    theta: cluster.theta.slice(0, -1),
+    r: cluster.lineR.slice(0, -1),
+    mode: 'markers' as const,
+    hoverinfo: 'text' as const,
+    text: cluster.markerText,
+    marker: { color: cluster.markerColor, size: 9 },
+    showlegend: false,
+    visible: clusterIndex === 0
+  };
+  return [lineTrace, markerTrace];
+});
+
+const sliderSteps = spiderClusters.map((cluster, clusterIndex) => {
+  const visible = spiderTraces.map((_, traceIndex) =>
+    traceIndex === clusterIndex * 2 || traceIndex === clusterIndex * 2 + 1
+  );
+  return {
+    label: `${clusterIndex}`,
+    method: 'update' as const,
+    args: [
+      { visible },
+      { title: `Language cluster (z) ${clusterIndex} — |z|-normalized (top 8)` }
+    ]
+  };
+});
+
+const spiderLayout = {
+  title: { text: 'Language cluster (z) 0 — |z|-normalized (top 8)', x: 0.05 },
+  height: 650,
+  margin: { l: 40, r: 40, t: 70, b: 80 },
+  colorway: ['#636efa', '#EF553B', '#00cc96', '#ab63fa', '#FFA15A', '#19d3f3', '#FF6692', '#B6E880', '#FF97FF', '#FECB52'],
+  font: { color: '#2a3f5f' },
+  hovermode: 'closest' as const,
+  hoverlabel: { align: 'left' },
+  paper_bgcolor: 'white',
+  plot_bgcolor: '#E5ECF6',
+  polar: {
+    bgcolor: '#E5ECF6',
+    angularaxis: { gridcolor: 'white', linecolor: 'white', ticks: '' },
+    radialaxis: {
+      gridcolor: 'white',
+      linecolor: 'white',
+      ticks: '',
+      range: [0, 1.05],
+      tickvals: [0.25, 0.5, 0.75, 1.0],
+      ticktext: ['weak', 'moderate', 'strong', 'very strong']
+    }
+  },
+  annotations: [
+    {
+      align: 'left',
+      showarrow: false,
+      text: "<span style='color:#1f77b4'>●</span> z ≥ 0   <span style='color:#d62728'>●</span> z < 0",
+      x: 1.02,
+      xref: 'paper' as const,
+      y: 1.02,
+      yref: 'paper' as const
+    }
+  ],
+  sliders: [
+    {
+      active: 0,
+      len: 0.85,
+      x: 0.08,
+      y: -0.05,
+      steps: sliderSteps
+    }
+  ]
+};
+
+const spiderConfig = { responsive: true };
+
+const SpiderPlot = () => {
+  const plotRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const plotNode = plotRef.current;
+    if (!plotNode) return;
+    Plotly.newPlot(plotNode, spiderTraces, spiderLayout, spiderConfig);
+    return () => {
+      Plotly.purge(plotNode);
+    };
+  }, []);
+  return <div ref={plotRef} className="h-[420px] w-full min-h-[420px]" />;
+};
 
 const App = () => (
   <div className="min-h-screen bg-[#fbfbfa] text-[#101828]">
@@ -192,12 +494,7 @@ const App = () => (
                 <div className="space-y-4 rounded-3xl border border-[#ecebe7] bg-[#f8fafc] p-6">
                   <p className="text-sm font-semibold text-[#101828]">Spider plot of language cluster |z|-scores</p>
                   <div className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
-                    <iframe
-                      src={`${assetBase}spider_plot.html`}
-                      title="Spider plot of language cluster statistics"
-                      className="h-[420px] w-full"
-                      loading="lazy"
-                    />
+                    <SpiderPlot />
                   </div>
                   <p className="text-sm text-[#475467]">
                     Each axis is a normalized |z| value for the top linguistic markers in cluster zero; the slider in the
