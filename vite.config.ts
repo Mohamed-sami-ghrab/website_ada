@@ -5,8 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      // Base path for Jekyll deployment (change to your repo name if deploying to GitHub Pages)
-      base: './',
+      // Base path for GitHub Pages deployment
+      base: '/website_ada/',
       build: {
         outDir: 'dist',
         assetsDir: 'assets',
