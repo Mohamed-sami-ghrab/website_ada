@@ -153,54 +153,93 @@ const App = () => (
         <p className="text-[#475467]">
           Our crime scene is Reddit: over 850,000 connections where one subreddit links to another. Each link carries language, tone, intent. We expected a comforting correlation: negativity equals linguistic simplicity. It didn't hold. Being articulate does not make you kind. Toxic communities don't speak worse—they speak differently. And the way communities interact might matter more than how long their sentences are.
         </p>
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-[#ebe9e4] bg-[#f8fafc] p-4 text-sm text-[#475467] shadow-inner">
-            <p className="font-semibold text-[#101828]">Interlude — Reddit Is Not a Collection of Islands</p>
-            <p className="mt-2">Silos leak, communities quote each other, argue, link. The graph proved constant movement—interaction is the default.</p>
-          </div>
-          <div className="rounded-2xl border border-[#ebe9e4] bg-[#f8fafc] p-4 text-sm text-[#475467] shadow-inner">
-            <p className="font-semibold text-[#101828]">Narrative Hook</p>
-            <p className="mt-2">Being smart doesn't make you nice. Toxicity is not dumbness. Complexity alone is silent. The paradox begins.</p>
-          </div>
-        </div>
       </section>
 
-      {acts.map(act => (
-        <section key={act.title} className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-5">
-          <div>
-            <p className="text-xs uppercase tracking-[0.5em] text-[#94a3b8]">{act.title}</p>
-            <h3 className="mt-2 text-2xl font-semibold text-[#101828]">{act.subtitle}</h3>
-          </div>
-          <div className="space-y-3 text-[#475467]">
-            {act.body.map(paragraph => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-            {act.hook && (
-              <p className="rounded-2xl border border-[#f97316] bg-[#fff7ef] px-4 py-3 text-sm font-semibold text-[#ae3415]">
-                {act.hook}
-              </p>
-            )}
-          </div>
-        </section>
-      ))}
+      <section className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
+        <h2 className="text-2xl font-semibold text-[#101828]">Interlude — Reddit Is Not a Collection of Islands</h2>
+        <p className="text-[#475467]">
+          Silos leak, communities quote each other, argue, link. The graph proved constant movement—interaction is the default.
+        </p>
+      </section>
 
-      <section className="rounded-3xl border border-[#ecebe7] bg-white p-8">
-        <h2 className="text-2xl font-semibold text-[#101828]">Act I Cast — Five Ways of Speaking Online</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {personalities.map(personality => (
-            <article key={personality.name} className="rounded-2xl border border-[#ecebe7] bg-[#f8fafc] p-6">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold text-[#101828]">{personality.emoji} {personality.name}</h3>
-                <span className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Complexity</span>
+      <section className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
+        <h2 className="text-2xl font-semibold text-[#101828]">ADD GRAPH ACTIVITY OVER TIME</h2>
+        <p className="text-[#475467]">
+          Silos leak, communities quote each other, argue, link. The graph proved constant movement—interaction is the default.
+        </p>
+      </section>
+
+
+      {acts.map((act, index) => (
+        <React.Fragment key={act.title}>
+          <section className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-5">
+            <div>
+              <p className="text-xs uppercase tracking-[0.5em] text-[#94a3b8]">{act.title}</p>
+              <h3 className="mt-2 text-2xl font-semibold text-[#101828]">{act.subtitle}</h3>
+            </div>
+            <div className="space-y-3 text-[#475467]">
+              {act.body.map(paragraph => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              {act.hook && (
+                <p className="rounded-2xl border border-[#f97316] bg-[#fff7ef] px-4 py-3 text-sm font-semibold text-[#ae3415]">
+                  {act.hook}
+                </p>
+              )}
+              {index === 0 && (
+                <div className="space-y-4 rounded-3xl border border-[#ecebe7] bg-[#f8fafc] p-6">
+                  <p className="text-sm font-semibold text-[#101828]">Spider plot of language cluster |z|-scores</p>
+                  <div className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
+                    <iframe
+                      src="/spider_plot.html"
+                      title="Spider plot of language cluster statistics"
+                      className="h-[420px] w-full"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p className="text-sm text-[#475467]">
+                    Each axis is a normalized |z| value for the top linguistic markers in cluster zero; the slider in the
+                    embedded plot cycles through the five archetypes.
+                  </p>
+                </div>
+              )}
+              {index === 1 && (
+                <figure className="rounded-2xl border border-[#ecebe7] bg-[#fdfaf6] p-5">
+                  <img
+                    src="/link_sentiment.png"
+                    alt="Link sentiment repartition between clusters"
+                    className="h-64 w-full rounded-2xl object-cover"
+                    loading="lazy"
+                  />
+                  <figcaption className="mt-3 text-sm text-[#475467]">
+                    Every thread link now wears a sentiment score. The density of green-to-red gradients shows that kindness
+                    and cruelty breathe from the same grammar but different words.
+                  </figcaption>
+                </figure>
+              )}
+            </div>
+          </section>
+          {index === 0 && (
+            <section className="rounded-3xl border border-[#ecebe7] bg-white p-8">
+              <h2 className="text-2xl font-semibold text-[#101828]">Act I Cast — Five Ways of Speaking Online</h2>
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {personalities.map(personality => (
+                  <article key={personality.name} className="rounded-2xl border border-[#ecebe7] bg-[#f8fafc] p-6">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-semibold text-[#101828]">{personality.emoji} {personality.name}</h3>
+                      <span className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Complexity</span>
+                    </div>
+                    <p className="mt-2 text-sm text-[#475467]">{personality.catchphrase}</p>
+                    <p className="mt-3 text-sm font-semibold text-[#101828]">Habitat · {personality.habitat}</p>
+                    <p className="mt-1 text-sm text-[#475467]">{personality.note}</p>
+                    <p className="mt-1 text-sm font-medium text-[#f97316]">{personality.expertise}</p>
+                  </article>
+                ))}
               </div>
-              <p className="mt-2 text-sm text-[#475467]">{personality.catchphrase}</p>
-              <p className="mt-3 text-sm font-semibold text-[#101828]">Habitat · {personality.habitat}</p>
-              <p className="mt-1 text-sm text-[#475467]">{personality.note}</p>
-              <p className="mt-1 text-sm font-medium text-[#f97316]">{personality.expertise}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+            </section>
+          )}
+        </React.Fragment>
+      ))}
 
       <section className="rounded-3xl border border-dashed border-[#f97316] bg-gradient-to-br from-[#fff7ef] to-white p-8 space-y-4">
         <h2 className="text-2xl font-semibold text-[#101828]">Conclusion — What This Means for the Internet</h2>
