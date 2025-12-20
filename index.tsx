@@ -482,35 +482,91 @@ const App = () => (
       </section>
 
       <section className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
-        <h2 className="text-2xl font-semibold text-[#101828]">Introduction — Decoding Reddit's Linguistic Landscape</h2>
-        <p className="text-[#475467]">
-          Reddit is often described as the front page of the internet.
-            In reality, it looks more like a vast digital city.
-            Thousands of communities coexist there, each built around a topic, a passion, a question, or sometimes just a shared sense of humor. Every day, millions of users post, reply, argue, explain, praise, mock, support, and contradict each other. Some conversations are friendly. Others are tense. Many are openly hostile.
-            Reddit is noisy.
-            Reddit is alive.
-            And Reddit is opinionated.
-            Between 2014 and 2017 alone, hundreds of thousands of interactions connected communities to one another. Links were shared, references were made, disagreements spilled across subreddit borders. Some of these interactions were clearly positive — expressions of agreement, endorsement, or support. Others were unmistakably negative — criticism, dismissal, or outright hostility.
+        <h2 className="text-3xl font-semibold text-[#101828]">Introduction: Decoding Reddit's Linguistic Landscape</h2>
 
-        </p>
-        <p className="text-[#475467]">
-          Silos leak, communities quote each other, argue, link. The graph proved constant movement—interaction is the default.
-        </p>
-        <div className="space-y-3">
-          <figure className="mt-4 overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
-            <iframe
-              src={`${assetBase}activity.html`}
-              title="Community activity over time"
-              className="h-[580px] w-full min-h-[420px] border-0"
-              loading="lazy"
-            />
-          </figure>
-          <p className="text-sm text-[#475467]">
-            The activity graph shows how threads ripple across subreddits; every jump is another community talking to someone else.If online discourse has a pulse, Reddit is where you can feel it.
-               But beneath the surface of memes, arguments, and advice threads lies a fascinating question: Does the way we write reveal how we interact? 
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-[#101828]">A City Made of Words</h3>
+          <p className="text-[#475467] leading-relaxed">
+            Reddit is often described as the front page of the internet. In reality, it looks more like a vast digital city.
+            Thousands of communities coexist there, each built around a topic, a passion, a question, or sometimes just a shared sense of humor.
+            Every day, millions of users post, reply, argue, explain, praise, mock, support, and contradict each other. Some conversations are friendly. Others are tense. Many are openly hostile.
           </p>
-        </div> 
-        
+          <p className="text-[#475467] leading-relaxed">
+            Reddit is noisy. Reddit is alive. And Reddit is opinionated.
+          </p>
+          <p className="text-[#475467] leading-relaxed">
+            Between 2014 and 2017 alone, hundreds of thousands of interactions connected communities to one another. Links were shared, references were made, disagreements spilled across subreddit borders. Some of these interactions were clearly positive — expressions of agreement, endorsement, or support. Others were unmistakably negative — criticism, dismissal, or outright hostility.
+          </p>
+          
+          <div className="my-8 space-y-3">
+              <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
+              <iframe
+                  src={`${assetBase}activity.html`}
+                  title="Community activity over time"
+                  className="h-[580px] w-full min-h-[420px] border-0"
+                  loading="lazy"
+              />
+              </figure>
+              <p className="text-sm text-[#475467]">
+              The activity graph shows how threads ripple across subreddits; every jump is another community talking to someone else.
+              </p>
+          </div>
+
+          <p className="text-[#475467] leading-relaxed">
+            If online discourse has a pulse, Reddit is where you can feel it. But beneath the surface of memes, arguments, and advice threads lies a fascinating question: 
+            <span className="font-medium text-[#101828]"> Does the way we write reveal how we interact?</span>
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-[#101828]">A Familiar Assumption — And a Doubt</h3>
+          <p className="text-[#475467] leading-relaxed">
+            When we think about negativity online, we tend to picture it in a very specific way. Anger is loud. Negativity is blunt. Toxic messages are short, messy, poorly written bursts of frustration.
+          </p>
+          <p className="text-[#475467] leading-relaxed">
+            But is that actually true? What if negativity doesn’t always shout? What if it argues calmly? What if it hides behind long sentences, complex vocabulary, and carefully structured reasoning?
+          </p>
+          <p className="text-[#475467] leading-relaxed font-medium italic">
+            In other words: does being negative mean being linguistically simple?
+          </p>
+          <p className="text-[#475467] leading-relaxed">
+            This question became the starting point of our exploration.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-[#101828]">Our Guiding Question — How Does Negativity Really Work?</h3>
+          <p className="text-[#475467] leading-relaxed">
+            Rather than asking what people talk about on Reddit, we decided to focus on how they talk. We wanted to understand:
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-[#475467] ml-4">
+              <li>Whether different language styles exist across Reddit,</li>
+              <li>Whether communities tend to specialize in one dominant style or mix many,</li>
+              <li>And whether linguistic complexity has anything to do with how positive or negative a message is.</li>
+          </ul>
+          <p className="text-[#475467] leading-relaxed">
+            To answer this, we followed a simple idea: <span className="text-[#101828] font-medium">instead of assuming how negativity looks, we let the data describe it.</span>
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-[#101828]">How the Story Unfolds</h3>
+          <p className="text-[#475467] leading-relaxed">
+            Our investigation unfolds in three steps.
+          </p>
+          <p className="text-[#475467] leading-relaxed">
+            <strong className="text-[#101828]">First</strong>, we look at language styles themselves. Using sentiment-related features, we cluster Reddit messages and uncover five distinct language profiles. We then ask whether subreddits behave like linguistic specialists — or whether they are melting pots of styles.
+          </p>
+          <p className="text-[#475467] leading-relaxed">
+            <strong className="text-[#101828]">Next</strong>, we deliberately step away from sentiment altogether. We build a complexity score, based on linguistic structure alone, and test a tempting hypothesis: that more complex language might be less negative. The data has other plans.
+          </p>
+          <p className="text-[#475467] leading-relaxed">
+            <strong className="text-[#101828]">Finally</strong>, we try to put our conclusions to the test. If complexity really matters, it should help predict whether a message is negative. We train several classifiers — from simple aggregates to dimensionality reduction and, finally, a Random Forest — to see what actually drives negativity.
+          </p>
+          <p className="text-[#475467] leading-relaxed">
+            What emerges is not a story about simple versus complex language, but about what truly signals hostility online. And along the way, we learn that negativity on Reddit is far more articulate than we expected.
+          </p>
+        </div>
       </section>
 
       <section className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
