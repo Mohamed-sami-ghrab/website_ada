@@ -520,7 +520,7 @@ const App = () => (
               <div className="space-y-4">
                 <figure className="rounded-2xl border border-[#ecebe7] bg-[#fdfaf6] p-4">
                   <img
-                    src={`${assetBase}correlation.png`}
+                    src={`${assetBase}corrolation.png`}
                     alt="Correlation of linguistic markers"
                     className="w-full max-h-[520px] rounded-2xl object-contain"
                     loading="lazy"
