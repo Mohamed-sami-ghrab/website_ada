@@ -482,10 +482,35 @@ const App = () => (
       </section>
 
       <section className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
-        <h2 className="text-2xl font-semibold text-[#101828]">Introduction — A Crime Scene Made of Words</h2>
+        <h2 className="text-2xl font-semibold text-[#101828]">Introduction — Decoding Reddit's Linguistic Landscape</h2>
         <p className="text-[#475467]">
-          Our crime scene is Reddit: over 850,000 connections where one subreddit links to another. Each link carries language, tone, intent. We expected a comforting correlation: negativity equals linguistic simplicity. It didn't hold. Being articulate does not make you kind. Toxic communities don't speak worse—they speak differently. And the way communities interact might matter more than how long their sentences are.
+          Reddit is often described as the front page of the internet.
+            In reality, it looks more like a vast digital city.
+            Thousands of communities coexist there, each built around a topic, a passion, a question, or sometimes just a shared sense of humor. Every day, millions of users post, reply, argue, explain, praise, mock, support, and contradict each other. Some conversations are friendly. Others are tense. Many are openly hostile.
+            Reddit is noisy.
+            Reddit is alive.
+            And Reddit is opinionated.
+            Between 2014 and 2017 alone, hundreds of thousands of interactions connected communities to one another. Links were shared, references were made, disagreements spilled across subreddit borders. Some of these interactions were clearly positive — expressions of agreement, endorsement, or support. Others were unmistakably negative — criticism, dismissal, or outright hostility.
+
         </p>
+        <p className="text-[#475467]">
+          Silos leak, communities quote each other, argue, link. The graph proved constant movement—interaction is the default.
+        </p>
+        <div className="space-y-3">
+          <figure className="mt-4 overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
+            <iframe
+              src={`${assetBase}activity.html`}
+              title="Community activity over time"
+              className="h-[580px] w-full min-h-[420px] border-0"
+              loading="lazy"
+            />
+          </figure>
+          <p className="text-sm text-[#475467]">
+            The activity graph shows how threads ripple across subreddits; every jump is another community talking to someone else.If online discourse has a pulse, Reddit is where you can feel it.
+               But beneath the surface of memes, arguments, and advice threads lies a fascinating question: Does the way we write reveal how we interact? 
+          </p>
+        </div> 
+        
       </section>
 
       <section className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
