@@ -359,6 +359,7 @@ const sliderSteps = spiderClusters.map((cluster, clusterIndex) => {
 
 const spiderLayout = {
   title: { text: 'Language cluster (z) 0 — |z|-normalized (top 8)', x: 0.05 },
+  autosize: true,
   height: 650,
   margin: { l: 40, r: 40, t: 70, b: 80 },
   colorway: ['#636efa', '#EF553B', '#00cc96', '#ab63fa', '#FFA15A', '#19d3f3', '#FF6692', '#B6E880', '#FF97FF', '#FECB52'],
@@ -408,12 +409,21 @@ const SpiderPlot = () => {
   useEffect(() => {
     const plotNode = plotRef.current;
     if (!plotNode) return;
+    const handleResize = () => Plotly.Plots.resize(plotNode);
     Plotly.newPlot(plotNode, spiderTraces, spiderLayout, spiderConfig);
+    window.addEventListener('resize', handleResize);
     return () => {
+      window.removeEventListener('resize', handleResize);
       Plotly.purge(plotNode);
     };
   }, []);
-  return <div ref={plotRef} className="h-[520px] w-full min-h-[520px]" />;
+  return (
+    <div
+      ref={plotRef}
+      className="w-full"
+      style={{ minHeight: spiderLayout.height, maxWidth: '100%' }}
+    />
+  );
 };
 
 const App = () => (
@@ -506,33 +516,33 @@ const App = () => (
               <p className="text-xs uppercase tracking-[0.5em] text-[#94a3b8]">{act.title}</p>
               <h3 className="mt-2 text-2xl font-semibold text-[#101828]">{act.subtitle}</h3>
             </div>
+            {index === 2 && (
+              <div className="space-y-4">
+                <figure className="rounded-2xl border border-[#ecebe7] bg-[#fdfaf6] p-4">
+                  <img
+                    src={`${assetBase}correlation.png`}
+                    alt="Correlation of linguistic markers"
+                    className="w-full max-h-[520px] rounded-2xl object-contain"
+                    loading="lazy"
+                  />
+                  <figcaption className="mt-3 text-sm text-[#475467]">
+                    Correlation heatmap pairing sentiment features with negativity scores; the dark bands highlight where word choice matters.
+                  </figcaption>
+                </figure>
+                <figure className="rounded-2xl border border-[#ecebe7] bg-white p-4">
+                  <img
+                    src={`${assetBase}rf.png`}
+                    alt="Random forest feature importances"
+                    className="w-full max-h-[520px] rounded-2xl object-contain"
+                    loading="lazy"
+                  />
+                  <figcaption className="mt-3 text-sm text-[#475467]">
+                    Random Forest feature importances highlighting the vocabulary signals that actually predict negativity.
+                  </figcaption>
+                </figure>
+              </div>
+            )}
             <div className="space-y-3 text-[#475467]">
-              {index === 2 && (
-                <div className="space-y-4">
-                  <figure className="rounded-2xl border border-[#ecebe7] bg-[#fdfaf6] p-4">
-                    <img
-                      src={`${assetBase}correlation.png`}
-                      alt="Correlation of linguistic markers"
-                      className="w-full max-h-[520px] rounded-2xl object-contain"
-                      loading="lazy"
-                    />
-                    <figcaption className="mt-3 text-sm text-[#475467]">
-                      Correlation heatmap pairing sentiment features with negativity scores; the dark bands highlight where word choice matters.
-                    </figcaption>
-                  </figure>
-                  <figure className="rounded-2xl border border-[#ecebe7] bg-white p-4">
-                    <img
-                      src={`${assetBase}rf.png`}
-                      alt="Random forest feature importances"
-                      className="w-full max-h-[520px] rounded-2xl object-contain"
-                      loading="lazy"
-                    />
-                    <figcaption className="mt-3 text-sm text-[#475467]">
-                      Random Forest feature importances showing the vocabulary signals that really predict negativity.
-                    </figcaption>
-                  </figure>
-                </div>
-              )}
               {act.body.map(paragraph => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
