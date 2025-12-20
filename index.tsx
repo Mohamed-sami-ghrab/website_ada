@@ -48,6 +48,25 @@ const personalities = [
   },
 ];
 
+const quizOptions = [
+  {
+    role: 'The Storyteller',
+    prompt: 'I build dramatic arcs and let stories breathe; nuance matters most.'
+  },
+  {
+    role: 'The Tech Support',
+    prompt: 'I stay calm, break problems into steps, and explain them clearly.'
+  },
+  {
+    role: 'The Firestarter',
+    prompt: 'I speak bluntly, stir emotion, and rally people into the fray.'
+  },
+  {
+    role: 'The Professors',
+    prompt: 'I prefer analytical, cautious language even when emotions run high.'
+  }
+];
+
 const acts = [
   {
     title: 'Act I — The Personalities of Reddit',
@@ -464,13 +483,19 @@ const App = () => (
         <p className="text-[#475467]">
           Silos leak, communities quote each other, argue, link. The graph proved constant movement—interaction is the default.
         </p>
-      </section>
-
-      <section className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
-        <h2 className="text-2xl font-semibold text-[#101828]">ADD GRAPH ACTIVITY OVER TIME</h2>
-        <p className="text-[#475467]">
-          Silos leak, communities quote each other, argue, link. The graph proved constant movement—interaction is the default.
-        </p>
+        <div className="space-y-3">
+          <figure className="mt-4 overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
+            <iframe
+              src={`${assetBase}activity.html`}
+              title="Community activity over time"
+              className="h-[420px] w-full border-0"
+              loading="lazy"
+            />
+          </figure>
+          <p className="text-sm text-[#475467]">
+            The activity graph shows how threads ripple across subreddits; every jump is another community talking to someone else.
+          </p>
+        </div>
       </section>
 
 
@@ -482,6 +507,32 @@ const App = () => (
               <h3 className="mt-2 text-2xl font-semibold text-[#101828]">{act.subtitle}</h3>
             </div>
             <div className="space-y-3 text-[#475467]">
+              {index === 2 && (
+                <div className="space-y-4">
+                  <figure className="rounded-2xl border border-[#ecebe7] bg-[#fdfaf6] p-4">
+                    <img
+                      src={`${assetBase}correlation.png`}
+                      alt="Correlation of linguistic markers"
+                      className="h-64 w-full rounded-2xl object-cover"
+                      loading="lazy"
+                    />
+                    <figcaption className="mt-3 text-sm text-[#475467]">
+                      Correlation heatmap pairing sentiment features with negativity scores; the dark bands highlight where word choice matters.
+                    </figcaption>
+                  </figure>
+                  <figure className="rounded-2xl border border-[#ecebe7] bg-white p-4">
+                    <img
+                      src={`${assetBase}rf.png`}
+                      alt="Random forest feature importances"
+                      className="h-64 w-full rounded-2xl object-cover"
+                      loading="lazy"
+                    />
+                    <figcaption className="mt-3 text-sm text-[#475467]">
+                      Random Forest feature importances showing the vocabulary signals that really predict negativity.
+                    </figcaption>
+                  </figure>
+                </div>
+              )}
               {act.body.map(paragraph => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -500,6 +551,17 @@ const App = () => (
                     Each axis is a normalized |z| value for the top linguistic markers in cluster zero; the slider in the
                     embedded plot cycles through the five archetypes.
                   </p>
+                  <figure className="overflow-hidden rounded-2xl border border-[#e0dcd7] bg-white shadow-sm">
+                    <iframe
+                      src={`${assetBase}pca_projection.html`}
+                      title="PCA projection of Reddit language"
+                      className="h-[360px] w-full border-0"
+                      loading="lazy"
+                    />
+                    <figcaption className="p-4 text-sm text-[#475467]">
+                      A PCA projection highlights how the linguistic clusters separate across the first two principal components.
+                    </figcaption>
+                  </figure>
                 </div>
               )}
               {index === 1 && (
@@ -519,23 +581,43 @@ const App = () => (
             </div>
           </section>
           {index === 0 && (
-            <section className="rounded-3xl border border-[#ecebe7] bg-white p-8">
-              <h2 className="text-2xl font-semibold text-[#101828]">Act I Cast — Five Ways of Speaking Online</h2>
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
-                {personalities.map(personality => (
-                  <article key={personality.name} className="rounded-2xl border border-[#ecebe7] bg-[#f8fafc] p-6">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-semibold text-[#101828]">{personality.emoji} {personality.name}</h3>
-                      <span className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Complexity</span>
-                    </div>
-                    <p className="mt-2 text-sm text-[#475467]">{personality.catchphrase}</p>
-                    <p className="mt-3 text-sm font-semibold text-[#101828]">Habitat · {personality.habitat}</p>
-                    <p className="mt-1 text-sm text-[#475467]">{personality.note}</p>
-                    <p className="mt-1 text-sm font-medium text-[#f97316]">{personality.expertise}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
+            <>
+              <section className="rounded-3xl border border-[#ecebe7] bg-white p-8">
+                <h2 className="text-2xl font-semibold text-[#101828]">Act I Cast — Five Ways of Speaking Online</h2>
+                <div className="mt-6 grid gap-4 md:grid-cols-2">
+                  {personalities.map(personality => (
+                    <article key={personality.name} className="rounded-2xl border border-[#ecebe7] bg-[#f8fafc] p-6">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-xl font-semibold text-[#101828]">{personality.emoji} {personality.name}</h3>
+                        <span className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Complexity</span>
+                      </div>
+                      <p className="mt-2 text-sm text-[#475467]">{personality.catchphrase}</p>
+                      <p className="mt-3 text-sm font-semibold text-[#101828]">Habitat · {personality.habitat}</p>
+                      <p className="mt-1 text-sm text-[#475467]">{personality.note}</p>
+                      <p className="mt-1 text-sm font-medium text-[#f97316]">{personality.expertise}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+              <section className="rounded-3xl border border-[#ecebe7] bg-[#f8fafc] p-8">
+                <h2 className="text-2xl font-semibold text-[#101828]">Quick quiz — What voice do you wear online?</h2>
+                <p className="mt-2 text-sm text-[#475467]">Pick the sentence that feels most natural when you write or reply.</p>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {quizOptions.map(option => (
+                    <button
+                      key={option.role}
+                      type="button"
+                      className="rounded-2xl border border-[#ebecf0] bg-white px-4 py-4 text-left text-sm text-[#475467] shadow-sm transition hover:-translate-y-0.5"
+                    >
+                      <p className="text-base font-semibold text-[#101828]">{option.role}</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.35em] text-[#f97316]">Reflective prompt</p>
+                      <p className="mt-1 text-sm">{option.prompt}</p>
+                    </button>
+                  ))}
+                </div>
+                <p className="mt-4 text-xs uppercase tracking-[0.4em] text-[#f97316]">No answers recorded · Just reflection</p>
+              </section>
+            </>
           )}
         </React.Fragment>
       ))}
