@@ -413,7 +413,7 @@ const SpiderPlot = () => {
       Plotly.purge(plotNode);
     };
   }, []);
-  return <div ref={plotRef} className="h-[420px] w-full min-h-[420px]" />;
+  return <div ref={plotRef} className="h-[520px] w-full min-h-[520px]" />;
 };
 
 const App = () => (
@@ -488,7 +488,7 @@ const App = () => (
             <iframe
               src={`${assetBase}activity.html`}
               title="Community activity over time"
-              className="h-[420px] w-full border-0"
+              className="h-[580px] w-full min-h-[420px] border-0"
               loading="lazy"
             />
           </figure>
@@ -513,7 +513,7 @@ const App = () => (
                     <img
                       src={`${assetBase}correlation.png`}
                       alt="Correlation of linguistic markers"
-                      className="h-64 w-full rounded-2xl object-cover"
+                      className="w-full max-h-[520px] rounded-2xl object-contain"
                       loading="lazy"
                     />
                     <figcaption className="mt-3 text-sm text-[#475467]">
@@ -524,7 +524,7 @@ const App = () => (
                     <img
                       src={`${assetBase}rf.png`}
                       alt="Random forest feature importances"
-                      className="h-64 w-full rounded-2xl object-cover"
+                      className="w-full max-h-[520px] rounded-2xl object-contain"
                       loading="lazy"
                     />
                     <figcaption className="mt-3 text-sm text-[#475467]">
@@ -555,7 +555,7 @@ const App = () => (
                     <iframe
                       src={`${assetBase}pca_projection.html`}
                       title="PCA projection of Reddit language"
-                      className="h-[360px] w-full border-0"
+                      className="h-[520px] w-full min-h-[480px] border-0"
                       loading="lazy"
                     />
                     <figcaption className="p-4 text-sm text-[#475467]">
@@ -569,7 +569,7 @@ const App = () => (
                   <img
                     src={`${assetBase}link_sentiment.png`}
                     alt="Link sentiment repartition between clusters"
-                    className="h-64 w-full rounded-2xl object-cover"
+                    className="w-full max-h-[520px] rounded-2xl object-contain"
                     loading="lazy"
                   />
                   <figcaption className="mt-3 text-sm text-[#475467]">
