@@ -338,17 +338,19 @@ const PartOne = () => {
         </p>
         
         <div className="my-8">
-          <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
-            <iframe
-              src={`${assetBase}pca_projection.html`}
-              title="PCA Map"
-              className="h-[520px] w-full border-0 rounded-xl bg-white"
-            />
-          </figure>
-          <div className="p-4 bg-blue-50 rounded-xl border-l-4 border-blue-400 text-sm text-blue-800 mt-4">
-            <strong>Note:</strong> We did PCA (Principal Component Analysis) for visualization only—that is why clusters appear on top of each other.
-          </div>
+        <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
+          <iframe
+            src={`${assetBase}language_styles_embedding.html`}
+            title="Language styles (2D embedding)"
+            className="h-[520px] w-full border-0 rounded-xl bg-white"
+            scrolling="no"
+            style={{ overflow: 'hidden' }}
+          />
+        </figure>
+        <div className="p-4 bg-blue-50 rounded-xl border-l-4 border-blue-400 text-sm text-blue-800 mt-4">
+          <strong>Note:</strong> We did PCA (Principal Component Analysis) for visualization only—that is why clusters appear on top of each other.
         </div>
+      </div>
       </div>
 
       <div className="space-y-6">
@@ -365,7 +367,129 @@ const PartOne = () => {
         <div className="rounded-2xl border border-[#e3e1dd] bg-white p-6 shadow-sm">
           <SpiderPlot />
         </div>
+        <div className="my-8">
+        <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm p-4">
+          <div className="flex flex-col items-center justify-center bg-[#f8fafc] rounded-xl overflow-hidden">
+            {/* Visual representation of the Top 8 Most Homogeneous Subreddits by Cluster */}
+            <img 
+              src={`${assetBase}Top8_Most_Homogeneous_Subreddits_by_cluster.png`} 
+              alt="Bar charts showing the top 8 subreddits with the highest percentage of posts in a single cluster (C0-C4)" 
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </figure>
+        
+        <p className="text-sm text-[#475467] text-center italic mt-4">
+          Some subreddits show extreme linguistic consistency, with nearly 100% of their content following a single language style.
+        </p>
       </div>
+      <div className="space-y-8 pt-6 border-t border-[#ecebe7]">
+  <h3 className="text-2xl font-semibold text-[#101828]">Validation: Subreddit Homogeneity Analysis</h3>
+  
+  <p className="text-[#475467] leading-relaxed text-lg">
+    To validate our cluster interpretations, we examined which subreddits have the highest homogeneity. This reveals whether clusters correspond to real community writing styles or are merely statistical artifacts.
+  </p>
+
+  <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+    {/* Cluster 0 - GREEN */}
+    <div className="rounded-2xl border border-green-100 bg-green-50/50 p-4">
+      <h4 className="text-xs font-bold text-green-700 uppercase tracking-wider mb-3">Cluster 0 - Toxic</h4>
+      <ul className="text-[11px] space-y-2 font-mono text-green-900">
+        <li className="flex justify-between"><span>redditvoidcoc</span> <span>90.0%</span></li>
+        <li className="flex justify-between"><span>profanitywatch</span> <span>85.2%</span></li>
+        <li className="flex justify-between"><span>shitgreeddisaster</span> <span>76.1%</span></li>
+        <li className="flex justify-between"><span>jimmiesclub</span> <span>73.8%</span></li>
+        <li className="flex justify-between"><span>boocredux</span> <span>73.3%</span></li>
+      </ul>
+    </div>
+
+    {/* Cluster 1 - ORANGE */}
+    <div className="rounded-2xl border border-orange-100 bg-orange-50/50 p-4">
+      <h4 className="text-xs font-bold text-orange-700 uppercase tracking-wider mb-3">Cluster 1 - Outliers</h4>
+      <ul className="text-[11px] space-y-2 font-mono text-orange-900">
+        <li className="flex justify-between"><span>rmsfhj</span> <span>72.0%</span></li>
+        <li className="flex justify-between"><span>pokemonforall</span> <span>57.4%</span></li>
+        <li className="flex justify-between"><span>hawks</span> <span>39.1%</span></li>
+        <li className="block h-8"></li> {/* Spacer for alignment */}
+      </ul>
+    </div>
+
+    {/* Cluster 2 - RED */}
+    <div className="rounded-2xl border border-red-100 bg-red-50/50 p-4">
+      <h4 className="text-xs font-bold text-red-700 uppercase tracking-wider mb-3">Cluster 2 - Casual</h4>
+      <ul className="text-[11px] space-y-2 font-mono text-red-900">
+        <li className="flex justify-between"><span>newsokunomoral</span> <span>100%</span></li>
+        <li className="flex justify-between"><span>reddoge</span> <span>100%</span></li>
+        <li className="flex justify-between"><span>romania_ss</span> <span>100%</span></li>
+        <li className="flex justify-between"><span>cannibalcaverns</span> <span>100%</span></li>
+        <li className="flex justify-between"><span>podemos</span> <span>98.5%</span></li>
+      </ul>
+    </div>
+
+    {/* Cluster 3 - PURPLE */}
+    <div className="rounded-2xl border border-purple-100 bg-purple-50/50 p-4">
+      <h4 className="text-xs font-bold text-purple-700 uppercase tracking-wider mb-3">Cluster 3 - Long</h4>
+      <ul className="text-[11px] space-y-2 font-mono text-purple-900">
+        <li className="flex justify-between"><span>truebestof2012</span> <span>100%</span></li>
+        <li className="flex justify-between"><span>testground4bots</span> <span>93.8%</span></li>
+        <li className="flex justify-between"><span>subreddit_stats</span> <span>86.3%</span></li>
+        <li className="flex justify-between"><span>boogalized</span> <span>80.0%</span></li>
+        <li className="flex justify-between"><span>popheadscircle</span> <span>72.1%</span></li>
+      </ul>
+    </div>
+
+    {/* Cluster 4 - BLUE */}
+    <div className="rounded-2xl border border-blue-100 bg-blue-50/50 p-4">
+        <h4 className="text-xs font-bold text-blue-700 uppercase tracking-wider mb-3">Cluster 4 - Std</h4>
+        <ul className="text-[11px] space-y-2 font-mono text-blue-900">
+          <li className="flex justify-between"><span>2vaped</span> <span>100%</span></li>
+          <li className="flex justify-between"><span>conglomera</span> <span>100%</span></li>
+          <li className="flex justify-between"><span>hscoaching</span> <span>100%</span></li>
+          <li className="flex justify-between"><span>mellowhongkong</span> <span>100%</span></li>
+          <li className="flex justify-between"><span>mubookclub</span> <span>100%</span></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+      </div>
+      {/* Diversity in Large Hubs Section */}
+<div className="space-y-8 pt-10 border-t border-[#ecebe7]">
+  <h3 className="text-2xl font-semibold text-[#101828]">When Scale Brings Diversity</h3>
+  
+  <p className="text-[#475467] leading-relaxed text-lg">
+    But Reddit is not only made of niche spaces. What happens when we look at large, high-traffic communities, the places where thousands of users collide every day? The answer is almost the opposite of homogeneity.
+  </p>
+
+  <div className="my-8">
+    <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm p-4">
+      <div className="flex flex-col items-center justify-center bg-[#f8fafc] rounded-xl overflow-hidden">
+        {/* Plot showing the mixture of all 5 clusters in the top 30 most active subreddits */}
+        <img 
+          src={`${assetBase}Language_Cluster_mix_Top30_Most_Active_Subreddits.png`} 
+          alt="Stacked bar chart showing language cluster composition for the top 30 most active subreddits" 
+          className="w-full h-auto object-contain"
+        />
+      </div>
+    </figure>
+    
+    <p className="text-sm text-[#475467] text-center italic mt-4">
+      In large subreddits like <strong>r/nfl</strong> or <strong>r/askreddit</strong>, no single cluster defines the community. Instead, users switch styles depending on the thread and emotional stakes.
+    </p>
+  </div>
+
+  <p className="text-[#475467] leading-relaxed text-lg">
+    Take a subreddit like <strong>r/nfl</strong>, a massive hub for sports discussion. As the data shows, its language profile is anything but uniform: casual language dominates live reactions and memes, while structured language appears in serious analysis. 
+  </p>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm italic">
+      <div className="p-5 rounded-2xl bg-blue-50 border border-blue-100 text-blue-900 leading-relaxed">
+        <strong>r/techsupport</strong> and <strong>r/buildapc</strong> lean heavily into Cluster 4 (Blue), reinforcing their roles as help-oriented communities.
+      </div>
+      <div className="p-5 rounded-2xl bg-red-50 border border-red-100 text-red-900 leading-relaxed">
+        <strong>r/daily_dot</strong> and <strong>r/thesefuckingaccounts</strong> are almost entirely dominated by Cluster 2 (Red), reflecting their focus on quick, efficient updates or automated content.
+      </div>
+    </div>
+  </div>
 
       {/* The Five Tribes Interactive Section */}
       <div className="space-y-6 pt-6 border-t border-[#ecebe7]">
@@ -773,13 +897,81 @@ const PartThree = () => {
         <p className="text-[#475467] leading-relaxed text-lg">
           We split our dataset of over half a million posts into two groups: messages containing <strong>positive hyperlinks</strong> and messages containing <strong>negative hyperlinks</strong>.
         </p>
-        <div className="my-8">
-          <p className="text-sm font-bold text-[#f97316] uppercase mb-4 text-center">Plot: Tableau of Biggest Cohen d Coefficients</p>
-          <div className="h-64 flex items-center justify-center border border-dashed border-[#d6d3cd] rounded-2xl bg-[#fcfcfb]">
-            [PLOT : TABLEAU OF BIGGEST COHEN D COEFF]
-          </div>
-          
-        </div>
+<div className="space-y-6 pt-6 border-t border-[#ecebe7]">
+  <h3 className="text-2xl font-semibold text-[#101828]">The Statistical Proof: Cohen's d Analysis</h3>
+  <p className="text-[#475467] leading-relaxed text-lg">
+    To move beyond visual intuition, we computed <strong>Cohen's d</strong> to measure the effect size—the standardized difference between positive and negative posts. 
+  </p>
+
+  <div className="overflow-hidden rounded-2xl border border-[#ecebe7] bg-white shadow-sm">
+    <table className="w-full text-left border-collapse">
+      <thead>
+        <tr className="bg-[#fcfcfb] border-b border-[#ecebe7]">
+          <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#94a3b8]">Feature</th>
+          <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#94a3b8]">Category</th>
+          <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#94a3b8]">Cohen's d</th>
+          <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#94a3b8]">Effect Size</th>
+          <th className="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#94a3b8]">Significant</th>
+        </tr>
+      </thead>
+      <tbody className="divide-y divide-[#ecebe7] text-sm">
+        <tr className="hover:bg-[#fff7ef]/30">
+          <td className="px-6 py-4 font-mono text-[#101828]">vader_compound</td>
+          <td className="px-6 py-4 text-[#475467]">Sentiment</td>
+          <td className="px-6 py-4 font-semibold text-green-600">0.6312</td>
+          <td className="px-6 py-4"><span className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase">Medium</span></td>
+          <td className="px-6 py-4 text-[#475467]">True</td>
+        </tr>
+        <tr className="hover:bg-[#fff7ef]/30">
+          <td className="px-6 py-4 font-mono text-[#101828]">vader_negative</td>
+          <td className="px-6 py-4 text-[#475467]">Sentiment</td>
+          <td className="px-6 py-4 font-semibold text-red-600">-0.6261</td>
+          <td className="px-6 py-4"><span className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase">Medium</span></td>
+          <td className="px-6 py-4 text-[#475467]">True</td>
+        </tr>
+        <tr className="hover:bg-[#fff7ef]/30">
+          <td className="px-6 py-4 font-mono text-[#101828]">liwc_negemo</td>
+          <td className="px-6 py-4 text-[#475467]">Emotional</td>
+          <td className="px-6 py-4 font-semibold text-red-600">-0.6239</td>
+          <td className="px-6 py-4"><span className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase">Medium</span></td>
+          <td className="px-6 py-4 text-[#475467]">True</td>
+        </tr>
+        <tr className="hover:bg-[#fff7ef]/30">
+          <td className="px-6 py-4 font-mono text-[#101828]">liwc_anger</td>
+          <td className="px-6 py-4 text-[#475467]">Emotional</td>
+          <td className="px-6 py-4 font-semibold text-red-600">-0.5806</td>
+          <td className="px-6 py-4"><span className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase">Medium</span></td>
+          <td className="px-6 py-4 text-[#475467]">True</td>
+        </tr>
+          <tr className="hover:bg-[#fff7ef]/30">
+            <td className="px-6 py-4 font-mono text-[#101828]">liwc_affect</td>
+            <td className="px-6 py-4 text-[#475467]">Emotional</td>
+            <td className="px-6 py-4 font-semibold text-[#101828]">-0.2955</td>
+            <td className="px-6 py-4"><span className="px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase">Small</span></td>
+            <td className="px-6 py-4 text-[#475467]">True</td>
+          </tr>
+          <tr className="bg-slate-50">
+            <td className="px-6 py-4 font-mono font-bold text-[#f97316]">complexity_score_pca_1</td>
+            <td className="px-6 py-4 font-bold text-[#101828]">Complexity</td>
+            <td className="px-6 py-4 font-bold text-[#101828]">-0.1692</td>
+            <td className="px-6 py-4"><span className="px-2 py-1 rounded-full bg-slate-200 text-slate-600 text-xs font-bold uppercase">Negligible</span></td>
+            <td className="px-6 py-4 text-[#475467]">True</td>
+          </tr>
+          <tr className="hover:bg-[#fff7ef]/30">
+            <td className="px-6 py-4 font-mono text-[#101828]">liwc_certain</td>
+            <td className="px-6 py-4 text-[#475467]">Cognitive</td>
+            <td className="px-6 py-4 font-semibold text-[#101828]">-0.1621</td>
+            <td className="px-6 py-4"><span className="px-2 py-1 rounded-full bg-slate-200 text-slate-600 text-xs font-bold uppercase">Negligible</span></td>
+            <td className="px-6 py-4 text-[#475467]">True</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <p className="text-sm italic text-[#475467] leading-relaxed">
+      <strong>Note:</strong> While all these features are statistically significant due to our large sample size, the <strong>Complexity PCA</strong> score falls into the "Negligible" category, meaning the difference between positive and negative posts is too small to be practically meaningful compared to emotional markers.
+    </p>
+  </div>
         <p className="text-[#475467] leading-relaxed text-lg">
           This is where the story takes a turn. When we compare emotional features, the difference is clear. <strong>But when we look at complexity, everything collapses.</strong> 
           Across all seven complexity measures, effect sizes stay below the threshold of meaningful difference (|d| &lt; 0.2).
@@ -984,6 +1176,90 @@ const Conclusion = () => {
     </section>
   );
 };
+
+
+const TeamSection = () => {
+  // Replace placeholders with actual names and image file names
+  const teamMembers = [
+    {
+      name: "Member Name 1",
+      role: "Lead Data Analyst",
+      image: `${assetBase}member1.jpg`,
+      contribution: "Designed the linguistic clustering architecture and PCA visualizations."
+    },
+    {
+      name: "Member Name 2",
+      role: "Network Scientist",
+      image: `${assetBase}member2.jpg`,
+      contribution: "Conducted the cross-community linking analysis and correlation studies."
+    },
+    {
+      name: "Member Name 3",
+      role: "Full Stack Developer",
+      image: `${assetBase}member3.jpg`,
+      contribution: "Architected the interactive narrative and data visualization platform."
+    }
+  ];
+
+  return (
+    <section id="team" className="rounded-3xl border border-[#ecebe7] bg-white p-8 md:p-12 space-y-12 shadow-sm">
+      {/* Section Header */}
+      <div className="max-w-3xl space-y-4">
+        <p className="text-xs uppercase tracking-[0.5em] text-[#f97316] font-bold">Team & Credits</p>
+        <h2 className="text-4xl font-semibold text-[#101828]">The Minds Behind the Paradox</h2>
+        <p className="text-[#475467] leading-relaxed text-lg">
+          Developed for the <strong>ADA 2025</strong> course at EPFL, the <em>ApesStrongTogether</em> team combined linguistic theory with large-scale network analysis to challenge assumptions about online discourse.
+        </p>
+      </div>
+
+      {/* Team Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        {teamMembers.map((member, index) => (
+          <div key={index} className="group flex flex-col items-center text-center space-y-6">
+            {/* Photo Container with consistent styling */}
+            <div className="relative h-56 w-56 overflow-hidden rounded-3xl border-8 border-[#f2f0eb] transition-all duration-500 group-hover:border-[#f97316] group-hover:shadow-xl">
+              <img 
+                src={member.image} 
+                alt={member.name} 
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/300?text=ADA+Team'; }}
+              />
+            </div>
+            
+            {/* Bio Details */}
+            <div className="space-y-2">
+              <h3 className="text-2xl font-bold text-[#101828]">{member.name}</h3>
+              <p className="text-sm font-bold text-[#f97316] uppercase tracking-widest">{member.role}</p>
+              <p className="mt-4 text-[#475467] italic leading-relaxed px-4">
+                "{member.contribution}"
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Institutional Footer */}
+      <div className="pt-12 border-t border-[#ecebe7] flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="space-y-1">
+          <p className="text-sm font-semibold text-[#101828]">CS-401 Applied Data Analysis</p>
+          <p className="text-xs text-[#94a3b8]">École Polytechnique Fédérale de Lausanne (EPFL)</p>
+        </div>
+        
+        <div className="flex gap-4">
+          <a 
+            href="https://github.com/epfl-ada/ada-2025-project-apesstrongtogether2025" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#101828] text-white text-sm font-bold hover:bg-[#f97316] transition-all shadow-md"
+          >
+            <span>Project Repository</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 
 
 type SpiderCluster = {
