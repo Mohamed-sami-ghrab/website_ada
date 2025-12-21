@@ -1332,7 +1332,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-2xl bg-[#f97316] text-white flex items-center justify-center font-bold">R</div>
           <div className="hidden sm:block">
-            <p className="text-xs uppercase tracking-[0.4em] text-[#f97316]">Hivemind Labs</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#f97316]">APS team</p>
             <p className="text-sm font-semibold text-[#101828]">The Language Paradox</p>
           </div>
         </div>
