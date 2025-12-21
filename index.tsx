@@ -1344,7 +1344,7 @@ const Navbar = () => {
             onClick={() => scrollToSection('opening')}
             className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
           >
-            Intro
+            Introduction
           </button>
           
           {/* Parts 1-4 Mapping */}
@@ -1354,7 +1354,7 @@ const Navbar = () => {
               onClick={() => scrollToSection(`part${num}`)}
               className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
             >
-              P{num}
+              Part{num}
             </button>
           ))}
 
@@ -1363,7 +1363,7 @@ const Navbar = () => {
             onClick={() => scrollToSection('conclusion')}
             className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
           >
-            End
+            Conclusion
           </button>
         </div>
 
