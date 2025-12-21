@@ -67,47 +67,100 @@ const quizOptions = [
   }
 ];
 
-const Opening = () => (
-  <div className="space-y-8">
-    {/* Hero Section */}
-    <section className="rounded-3xl border border-[#ebe9e4] bg-white p-10 shadow-[0_25px_60px_-35px_rgba(15,23,42,0.25)]">
-      <p className="text-xs uppercase tracking-[0.6em] text-[#f97316]">2024 data journalism | Reddit</p>
-      <h1 className="mt-4 text-4xl font-semibold leading-tight text-[#101828] md:text-5xl">The Language Paradox of Reddit</h1>
-      <p className="mt-6 text-lg leading-relaxed text-[#475467]">
-        We expected angry Redditors to sound dumb. Instead we found structured sentences, careful grammar, and intentional vocabulary. This narrative explains how complexity failed to account for toxicity—and what actually does.
-      </p>
-      <div className="mt-8 grid gap-4 text-sm text-[#475467] md:grid-cols-3">
-        <div>
-          <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Scope</p>
-          <p className="font-semibold text-[#101828]">850K+ subreddit links</p>
-        </div>
-        <div>
-          <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Interactions</p>
-          <p className="font-semibold text-[#101828]">~1M posts and comments</p>
-        </div>
-        <div>
-          <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Period</p>
-          <p className="font-semibold text-[#101828]">2013–2016</p>
-        </div>
-      </div>
-    </section>
+const Opening = () => {
+  const [quizChoice, setQuizChoice] = useState<string | null>(null);
 
-    {/* Narrative Hook */}
-    <section className="rounded-3xl border border-dashed border-[#f97316] bg-gradient-to-br from-[#fff7ef] to-white p-8">
-      <h2 className="text-2xl font-semibold text-[#101828]">Opening — When Anger Sounds Intelligent</h2>
-      <p className="mt-4 text-lg leading-relaxed text-[#475467]">
-        Picture this: It's 2015. Somewhere on Reddit, someone is furious. Not mildly annoyed. Furious. They're about to write the angriest comment of their online life.
-      </p>
-      <p className="mt-2 text-lg font-semibold text-[#101828]">
-        A) "THIS IS COMPLETE GARBAGE!!!"<br />
-        B) "I find your methodology profoundly inadequate and your conclusions demonstrably erroneous."
-      </p>
-      <p className="mt-4 text-base text-[#475467]">
-        If you picked A, you're not alone. The internet troll in our imagination is a keyboard-smashing caveman. But the data told another tale: anger delivered in paragraphs, with perfect grammar. That's the mystery we unpack in this exploration.
-      </p>
-    </section>
-  </div>
-);
+  return (
+    <div id="opening" className="space-y-8">
+      {/* Hero Section */}
+      <section className="rounded-3xl border border-[#ebe9e4] bg-white p-10 shadow-[0_25px_60px_-35px_rgba(15,23,42,0.25)]">
+        <p className="text-xs uppercase tracking-[0.6em] text-[#f97316]">2024 data journalism | Reddit</p>
+        <h1 className="mt-4 text-4xl font-semibold leading-tight text-[#101828] md:text-5xl">The Language Paradox of Reddit</h1>
+        <p className="mt-6 text-lg leading-relaxed text-[#475467]">
+          We expected angry Redditors to sound dumb. Instead we found structured sentences, careful grammar, and intentional vocabulary. This narrative explains how complexity failed to account for toxicity—and what actually does.
+        </p>
+        <div className="mt-8 grid gap-4 text-sm text-[#475467] md:grid-cols-3">
+          <div>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Scope</p>
+            <p className="font-semibold text-[#101828]">850K+ subreddit links</p>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Interactions</p>
+            <p className="font-semibold text-[#101828]">~1M posts and comments</p>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Period</p>
+            <p className="font-semibold text-[#101828]">2013–2016</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Opening Quiz */}
+      <section className="rounded-3xl border border-dashed border-[#f97316] bg-gradient-to-br from-[#fff7ef] to-white p-8 space-y-6">
+        <div className="space-y-4">
+          <h2 className="text-2xl font-semibold text-[#101828]">Opening — When Anger Sounds Intelligent</h2>
+          <p className="text-lg leading-relaxed text-[#475467]">
+            Picture this: It's 2015. Somewhere on Reddit, someone is furious. Not mildly annoyed. Furious. They're about to write the angriest comment of their online life. 
+            <span className="block mt-2 font-medium text-[#101828]">Which of these do you think is the "toxic" comment?</span>
+          </p>
+        </div>
+
+        {/* Quiz Options */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <button
+            onClick={() => setQuizChoice('A')}
+            className={`p-6 rounded-2xl border-2 text-left transition-all ${
+              quizChoice === 'A' 
+              ? 'border-[#f97316] bg-white shadow-md' 
+              : 'border-[#ecebe7] bg-white/50 hover:border-[#f97316]/50'
+            }`}
+          >
+            <p className="text-xs font-bold text-[#f97316] uppercase mb-2">Option A</p>
+            <p className="text-lg font-bold text-[#101828]">"THIS IS COMPLETE GARBAGE!!!"</p>
+          </button>
+
+          <button
+            onClick={() => setQuizChoice('B')}
+            className={`p-6 rounded-2xl border-2 text-left transition-all ${
+              quizChoice === 'B' 
+              ? 'border-[#f97316] bg-white shadow-md' 
+              : 'border-[#ecebe7] bg-white/50 hover:border-[#f97316]/50'
+            }`}
+          >
+            <p className="text-xs font-bold text-[#f97316] uppercase mb-2">Option B</p>
+            <p className="text-lg font-medium text-[#101828]">
+              "I find your methodology profoundly inadequate and your conclusions demonstrably erroneous."
+            </p>
+          </button>
+        </div>
+
+        {/* Revealed Answer */}
+        {quizChoice && (
+          <div className="animate-in fade-in slide-in-from-top-4 duration-500 mt-6 p-6 rounded-2xl bg-[#101828] text-white">
+            <p className="text-lg leading-relaxed">
+              {quizChoice === 'A' ? (
+                <>
+                  If you picked A, <span className="text-[#f97316] font-bold">you're not alone.</span> The internet troll in our imagination is a keyboard-smashing caveman.
+                </>
+              ) : (
+                <>
+                  You recognized the paradox. While Option A looks like the stereotype, the data revealed something much more complex.
+                </>
+              )}
+            </p>
+            <p className="mt-4 text-base text-[#94a3b8]">
+              But the data told another tale: anger delivered in paragraphs, with perfect grammar. That's the mystery we unpack in this exploration.
+            </p>
+            <div className="mt-4 flex items-center gap-2 text-[#f97316] font-bold text-sm uppercase tracking-widest">
+              <span>Scroll to begin the investigation</span>
+              <span className="animate-bounce">↓</span>
+            </div>
+          </div>
+        )}
+      </section>
+    </div>
+  );
+};
 
 const Introduction = () => (
   <section id="opening" className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
