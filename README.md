@@ -1,160 +1,100 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# When Anger Speaks Fluently: Language, Sentiment, and Interaction on Reddit
 
-# The Grammar of the Hivemind - Reddit Network Analysis
+## 🔗 Project Website
+ **Data story website:**  
+**https://mohamed-sami-ghrab.github.io/website_ada/**
 
-A data journalism project analyzing the Reddit Hyperlink Network through linguistic clustering and network analysis. This React/TypeScript application visualizes how language style determines community interactions on Reddit.
+---
 
-View the original app in AI Studio: https://ai.studio/apps/drive/1Cs4_8RSp0BwWyUyqGCSVNiBE5A1DqUcN
+## Project Overview
 
-## 🚀 Quick Start
+Online negativity is often assumed to be simple, impulsive, and poorly written.  
+This project challenges that intuition.
 
-### Development Mode (Vite)
-**Prerequisites:** Node.js 16+
+Using more than **one million Reddit interactions (2014–2017)**, we explore how people **write**, how communities **develop linguistic norms**, and how those norms **shape interactions across Reddit’s network**.
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   ```bash
-   npm run dev
-   ```
-4. Visit http://localhost:3000
+Rather than focusing on *what* people talk about, we focus on *how* they express themselves:
+- Is toxic language necessarily simple?
+- Do communities specialize in a single writing style?
+- Does language style influence how communities interact with others?
+- Can linguistic complexity predict whether a message is positive or negative?
 
-### Jekyll Deployment Mode
-**Prerequisites:** Node.js 16+, Ruby 2.5+, Bundler
+The answers are often surprising.
 
-1. Install all dependencies:
-   ```bash
-   npm install
-   bundle install
-   ```
-2. Build and serve with Jekyll:
-   ```bash
-   npm run dev:jekyll
-   ```
-3. Visit http://localhost:4000
+---
 
-## 📊 Features
+##  The Data Story
 
-### Interactive Visualizations
-- **Time Series Analysis** - Reddit activity patterns over 24 days
-- **Top Subreddits** - Bar chart of most active communities
-- **Sentiment Analysis** - Pie charts showing positive/negative/neutral distribution
-- **Linguistic Clustering** - PCA scatter plot with 3 distinct language styles
-- **Feature Radar** - Comparing readability, complexity, and emotional markers
-- **Interaction Matrix** - Heatmap of cross-community communication
+Our data story unfolds in three main parts:
 
-### Technology Stack
-- **React 19** with TypeScript
-- **Recharts** for data visualization
-- **Tailwind CSS** for styling
-- **Lucide React** for icons
-- **Vite** for build tooling
-- **Jekyll** for static site generation
+### **Part 1 - Discovering Reddit’s Language Styles**
+We analyze linguistic features (sentiment, grammar, structure) and use **unsupervised clustering** to uncover **five distinct language styles** on Reddit, ranging from casual meme language to structured, formal discourse and toxic satire.
 
-## 🌐 Deployment
+We then ask whether subreddits behave as:
+- **Linguistic specialists** (dominated by one style), or
+- **Linguistic melting pots** (multiple styles coexisting)
 
-This project is configured for multiple deployment options:
+This reveals how language norms emerge at the community level.
 
-### 1. GitHub Pages (Recommended)
-- Push to GitHub
-- Enable GitHub Pages with "GitHub Actions" source
-- Auto-deploys on every push via included workflow
-- **See:** [QUICKSTART.md](QUICKSTART.md)
+---
 
-### 2. Netlify
-- Connect repository
-- Build: `npm run deploy`
-- Publish: `_site`
-- **See:** [DEPLOYMENT.md](DEPLOYMENT.md)
+### **Part 2 - Language Style and Network Behavior**
+Next, we connect language styles to Reddit’s **interaction network**.
 
-### 3. Vercel
-- Run `vercel` in project directory
-- Follow prompts
+We show that:
+- Toxic/satirical communities are highly active linkers and export negativity.
+- Formal communities link more constructively.
+- Language style predicts **how communities act**, but not **how popular they are**.
 
-## 📂 Project Structure
+Language does not just describe communities - it shapes their role in the network.
 
-```
-.
-├── _config.yml              # Jekyll configuration
-├── _layouts/
-│   └── default.html         # Jekyll layout wrapper
-├── .github/workflows/       # GitHub Actions auto-deployment
-├── index.md                 # Jekyll entry point
-├── index.tsx                # React application source
-├── dist/                    # Vite build output (generated)
-├── _site/                   # Jekyll build output (generated)
-├── package.json             # Node dependencies
-├── Gemfile                  # Ruby dependencies
-└── vite.config.ts           # Vite configuration
-```
+---
 
-## 📚 Documentation
+### **Part 3 - The Complexity Paradox**
+Finally, we isolate **linguistic complexity** from emotional content.
 
-- **[QUICKSTART.md](QUICKSTART.md)** - Fast setup and deployment guide
-- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Detailed deployment instructions
-- **[CONVERSION_SUMMARY.md](CONVERSION_SUMMARY.md)** - Technical details of Jekyll conversion
+Using multiple complexity metrics and machine learning models, we demonstrate that:
+- Positive and negative messages are **equally complex**.
+- Emotional features are far stronger predictors of sentiment than grammar or structure.
+- Toxicity is about **what is expressed emotionally**, not **how sophisticated the language is**.
 
-## 🛠️ Available Commands
+Anger on Reddit is often articulate.
 
-```bash
-# Development
-npm run dev              # Vite dev server (fast, hot reload)
-npm run build            # Build React app to dist/
-npm run preview          # Preview Vite build
+---
 
-# Jekyll
-npm run dev:jekyll       # Build + serve with Jekyll
-npm run jekyll:serve     # Serve existing build
-npm run jekyll:build     # Jekyll build only
-npm run deploy           # Full production build
-```
+## Notebooks & Additional Analyses
 
-## 🎨 Data & Analysis
+All analyses were conducted in **Jupyter notebooks**, which contain:
+- Full preprocessing pipelines
+- Feature engineering
+- Statistical tests
+- Clustering, PCA, and classification models
+- Additional exploratory analyses and robustness checks
 
-### Key Findings
-1. **The Meta-Layer** - A few communities curate content for everyone
-2. **Positivity Dominates** - 90% of connections are constructive
-3. **Language Creates Walls** - Toxic dialects isolate communities
+Some analyses go beyond what is presented in the public data story and are documented **only in the notebooks**.
 
-### Data Source
-Reddit Hyperlink Network with 850,000+ connections across subreddits
+**See notebooks for full technical details and complementary results.**
 
-### Methodology
-- 86 linguistic features engineered
-- K-Means clustering for style classification
-- PCA for dimensionality reduction
-- Sentiment analysis on titles and body text
+---
 
-## 🔧 Troubleshooting
+## Team Contributions
 
-### "vite not recognized"
-```bash
-npm install
-```
+| Name   | Contribution |
+|--------|--------------|
+| Liza   | Designed and updated the project website; created visual assets for the data story |
+| Pierre | Developed interactive visualizations for Milestone 3; authored key sections of the data story |
+| Mohamed Sami   | Set up and maintained the project website; implemented website updates |
+| Rayan  | Led Milestone 3 writing; prepared and adapted plots for web integration |
+| Paul   | Defined the overall data story narrative; reviewed and refined Milestone 3 content |
 
-### "bundle: command not found"
-```bash
-gem install bundler
-bundle install
-```
 
-### Assets not loading in Jekyll
-```bash
-npm run build      # Build React app first
-npm run dev:jekyll # Then serve with Jekyll
-```
+---
 
-## 📄 License
+## ✨ Takeaway
 
-This project contains an AI Studio generated application.
+Reddit is not just a collection of topic-based forums.  
+It is a **linguistic ecosystem**, where communities develop distinct ways of speaking that shape how they interact with the rest of the platform.
 
-## 🙏 Credits
+And beneath all the structure and grammar, one rule dominates:
 
-**Team:** ApesStrongTogether  
-**Data:** Reddit Hyperlink Network  
-**Publication Date:** March 2024
+> **Emotion matters more than complexity.**
