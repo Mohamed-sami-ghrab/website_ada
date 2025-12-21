@@ -616,7 +616,7 @@ const PartOne = () => {
                 <strong>r/daily_dot</strong> and <strong>r/thesefuckingaccounts</strong> are almost entirely dominated by Cluster 2 (Red), reflecting their focus on quick, efficient updates or automated content.
               </div>
             </div>
-          </div>
+          
         </div>
         
 
