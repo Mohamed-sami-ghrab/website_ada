@@ -427,7 +427,7 @@ const SpiderPlot = () => {
 };
 
 const App = () => (
-  <div className="min-h-screen bg-[#fbfbfa] text-[#101828]">
+  <div className="min-h-screen bg-[#fbfbfa] text-[#101828] text-lg">
     <nav className="sticky top-0 z-50 border-b border-[#ebe9e4] bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3">
