@@ -495,7 +495,7 @@ const App = () => (
             Reddit is noisy. Reddit is alive. And Reddit is opinionated.
           </p>
           <p className="text-[#475467] leading-relaxed">
-            Between 2014 and 2017 alone, hundreds of thousands of interactions connected communities to one another. Links were shared, references were made, disagreements spilled across subreddit borders. Some of these interactions were clearly positive — expressions of agreement, endorsement, or support. Others were unmistakably negative — criticism, dismissal, or outright hostility.
+            Between 2014 and 2017 alone, hundreds of thousands of interactions connected communities to one another. Links were shared, references were made, disagreements spilled across subreddit borders. Some of these interactions were clearly positive: expressions of agreement, endorsement, or support. Others were unmistakably negative:criticism, dismissal, or outright hostility.
           </p>
           
           <div className="my-8 space-y-3">
@@ -535,7 +535,7 @@ const App = () => (
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-[#101828]">Our Guiding Question — How Does Negativity Really Work?</h3>
+          <h3 className="text-xl font-semibold text-[#101828]">Our Guiding Question - How Does Negativity Really Work?</h3>
           <p className="text-[#475467] leading-relaxed">
             Rather than asking what people talk about on Reddit, we decided to focus on how they talk. We wanted to understand:
           </p>
@@ -555,13 +555,13 @@ const App = () => (
             Our investigation unfolds in three steps.
           </p>
           <p className="text-[#475467] leading-relaxed">
-            <strong className="text-[#101828]">First</strong>, we look at language styles themselves. Using sentiment-related features, we cluster Reddit messages and uncover five distinct language profiles. We then ask whether subreddits behave like linguistic specialists — or whether they are melting pots of styles.
+            <strong className="text-[#101828]">First</strong>, we look at language styles themselves. Using sentiment-related features, we cluster Reddit messages and uncover five distinct language profiles. We then ask whether subreddits behave like linguistic specialists, or whether they are melting pots of styles.
           </p>
           <p className="text-[#475467] leading-relaxed">
             <strong className="text-[#101828]">Next</strong>, we deliberately step away from sentiment altogether. We build a complexity score, based on linguistic structure alone, and test a tempting hypothesis: that more complex language might be less negative. The data has other plans.
           </p>
           <p className="text-[#475467] leading-relaxed">
-            <strong className="text-[#101828]">Finally</strong>, we try to put our conclusions to the test. If complexity really matters, it should help predict whether a message is negative. We train several classifiers — from simple aggregates to dimensionality reduction and, finally, a Random Forest — to see what actually drives negativity.
+            <strong className="text-[#101828]">Finally</strong>, we try to put our conclusions to the test. If complexity really matters, it should help predict whether a message is negative. We train several classifiers, from simple aggregates to dimensionality reduction and, finally, a Random Forest to see what actually drives negativity.
           </p>
           <p className="text-[#475467] leading-relaxed">
             What emerges is not a story about simple versus complex language, but about what truly signals hostility online. And along the way, we learn that negativity on Reddit is far more articulate than we expected.
