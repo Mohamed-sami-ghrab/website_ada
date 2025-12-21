@@ -438,10 +438,6 @@ const PartOne = () => {
     </div>
       </div>
       {/* Diversity in Large Hubs Section */}
-<div className="space-y-8 pt-10 border-t border-[#ecebe7]">
-  
-  
-  </div>
 
       {/* The Five Tribes Interactive Section */}
       <div className="space-y-6 pt-6 border-t border-[#ecebe7]">
