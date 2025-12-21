@@ -608,7 +608,17 @@ const PartOne = () => {
           <p className="text-[#475467] leading-relaxed">
             No single cluster defines the community. Instead, users switch styles within the same space, depending on the thread, the moment, and the emotional stakes. A joke invites casual language. A serious question invites structure. A loss invites frustration.
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm italic">
+              <div className="p-5 rounded-2xl bg-blue-50 border border-blue-100 text-blue-900 leading-relaxed">
+                <strong>r/techsupport</strong> and <strong>r/buildapc</strong> lean heavily into Cluster 4 (Blue), reinforcing their roles as help-oriented communities.
+              </div>
+              <div className="p-5 rounded-2xl bg-red-50 border border-red-100 text-red-900 leading-relaxed">
+                <strong>r/daily_dot</strong> and <strong>r/thesefuckingaccounts</strong> are almost entirely dominated by Cluster 2 (Red), reflecting their focus on quick, efficient updates or automated content.
+              </div>
+            </div>
+          </div>
         </div>
+        
 
         <div className="space-y-6">
           <h4 className="text-xl font-semibold text-[#101828]">From Language Styles to Network Behavior</h4>
