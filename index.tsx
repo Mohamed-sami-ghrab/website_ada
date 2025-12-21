@@ -367,22 +367,7 @@ const PartOne = () => {
         <div className="rounded-2xl border border-[#e3e1dd] bg-white p-6 shadow-sm">
           <SpiderPlot />
         </div>
-        <div className="my-8">
-        <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm p-4">
-          <div className="flex flex-col items-center justify-center bg-[#f8fafc] rounded-xl overflow-hidden">
-            {/* Visual representation of the Top 8 Most Homogeneous Subreddits by Cluster */}
-            <img 
-              src={`${assetBase}Top8_Most_Homogeneous_Subreddits_by_cluster.png`} 
-              alt="Bar charts showing the top 8 subreddits with the highest percentage of posts in a single cluster (C0-C4)" 
-              className="w-full h-auto object-contain"
-            />
-          </div>
-        </figure>
-        
-        <p className="text-sm text-[#475467] text-center italic mt-4">
-          Some subreddits show extreme linguistic consistency, with nearly 100% of their content following a single language style.
-        </p>
-      </div>
+
       <div className="space-y-8 pt-6 border-t border-[#ecebe7]">
   <h3 className="text-2xl font-semibold text-[#101828]">Validation: Subreddit Homogeneity Analysis</h3>
   
@@ -454,7 +439,6 @@ const PartOne = () => {
       </div>
       {/* Diversity in Large Hubs Section */}
 <div className="space-y-8 pt-10 border-t border-[#ecebe7]">
-  <h3 className="text-2xl font-semibold text-[#101828]">When Scale Brings Diversity</h3>
   
   <p className="text-[#475467] leading-relaxed text-lg">
     But Reddit is not only made of niche spaces. What happens when we look at large, high-traffic communities, the places where thousands of users collide every day? The answer is almost the opposite of homogeneity.
@@ -1182,22 +1166,29 @@ const TeamSection = () => {
   // Replace placeholders with actual names and image file names
   const teamMembers = [
     {
-      name: "Member Name 1",
+      name: "Rayan  Bouchallouf",
       role: "Lead Data Analyst",
-      image: `${assetBase}member1.jpg`,
-      contribution: "Designed the linguistic clustering architecture and PCA visualizations."
+      image: `${assetBase}rayan2.jpg`,
     },
     {
-      name: "Member Name 2",
+      name: "Yelizaveta Kulynych",
       role: "Network Scientist",
-      image: `${assetBase}member2.jpg`,
-      contribution: "Conducted the cross-community linking analysis and correlation studies."
+      image: `${assetBase}lisa.jpg`,
     },
     {
-      name: "Member Name 3",
+      name: "Mohamed Sami Ghrab",
       role: "Full Stack Developer",
-      image: `${assetBase}member3.jpg`,
-      contribution: "Architected the interactive narrative and data visualization platform."
+      image: `${assetBase}sami.jpg`,
+    },
+        {
+      name: "Paul Bourgois",
+      role: "Full Stack Developer",
+      image: `${assetBase}paul.jpg`,
+    },
+        {
+      name: "Pierre Mailler",
+      role: "Full Stack Developer",
+      image: `${assetBase}pierre.jpg`,
     }
   ];
 
@@ -1229,9 +1220,9 @@ const TeamSection = () => {
             {/* Bio Details */}
             <div className="space-y-2">
               <h3 className="text-2xl font-bold text-[#101828]">{member.name}</h3>
-              <p className="text-sm font-bold text-[#f97316] uppercase tracking-widest">{member.role}</p>
+              {/* <p className="text-sm font-bold text-[#f97316] uppercase tracking-widest">{member.role}</p> */}
               <p className="mt-4 text-[#475467] italic leading-relaxed px-4">
-                "{member.contribution}"
+                {/* "{member.contribution}" */}
               </p>
             </div>
           </div>
@@ -1260,6 +1251,84 @@ const TeamSection = () => {
   );
 };
 
+// const TeamSection = () => {
+//   const teamMembers = [
+//     { name: "Rayan Bouchallouf", image: `${assetBase}rayan2.jpg` },
+//     { name: "Yelizaveta Kulynych", image: `${assetBase}lisa.jpg` },
+//     { name: "Mohamed Sami Ghrab", image: `${assetBase}sami.jpg` },
+//     { name: "Paul Bourgois", image: `${assetBase}paul.jpg` },
+//     { name: "Pierre Mailler", image: `${assetBase}pierre.jpg` }
+//   ];
+
+//   return (
+//     <section id="team" className="rounded-3xl border border-[#ecebe7] bg-white p-8 md:p-12 space-y-16 shadow-sm">
+//       {/* Section Header */}
+//       <div className="max-w-3xl space-y-4">
+//         <p className="text-xs uppercase tracking-[0.5em] text-[#f97316] font-bold">Team & Credits</p>
+//         <h2 className="text-4xl font-semibold text-[#101828]">The Minds Behind the Paradox</h2>
+//         <p className="text-[#475467] leading-relaxed text-lg">
+//           Developed for the <strong>ADA 2025</strong> course at EPFL, the <em>ApesStrongTogether</em> team combined linguistic theory with large-scale network analysis to challenge assumptions about online discourse.
+//         </p>
+//       </div>
+
+//       {/* Symmetrical Team Layout */}
+//       <div className="space-y-16">
+//         {/* ROW 1: Hard-coded 3 Members */}
+//         <div className="flex flex-row flex-wrap justify-center gap-12 md:gap-16">
+//           {teamMembers.slice(0, 3).map((member, index) => (
+//             <div key={index} className="group flex flex-col items-center text-center space-y-6 w-64">
+//               <div className="relative h-56 w-56 overflow-hidden rounded-3xl border-8 border-[#f2f0eb] transition-all duration-500 group-hover:border-[#f97316] group-hover:shadow-xl">
+//                 <img 
+//                   src={member.image} 
+//                   alt={member.name} 
+//                   className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+//                   onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/300?text=ADA+Team'; }}
+//                 />
+//               </div>
+//               <h3 className="text-xl font-bold text-[#101828] leading-tight">{member.name}</h3>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* ROW 2: Hard-coded 2 Members (Centered) */}
+//         <div className="flex flex-row flex-wrap justify-center gap-12 md:gap-16">
+//           {teamMembers.slice(3, 5).map((member, index) => (
+//             <div key={index + 3} className="group flex flex-col items-center text-center space-y-6 w-64">
+//               <div className="relative h-56 w-56 overflow-hidden rounded-3xl border-8 border-[#f2f0eb] transition-all duration-500 group-hover:border-[#f97316] group-hover:shadow-xl">
+//                 <img 
+//                   src={member.image} 
+//                   alt={member.name} 
+//                   className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+//                   onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/300?text=ADA+Team'; }}
+//                 />
+//               </div>
+//               <h3 className="text-xl font-bold text-[#101828] leading-tight">{member.name}</h3>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* Institutional Footer */}
+//       <div className="pt-12 border-t border-[#ecebe7] flex flex-col md:flex-row justify-between items-center gap-6">
+//         <div className="space-y-1">
+//           <p className="text-sm font-semibold text-[#101828]">CS-401 Applied Data Analysis</p>
+//           <p className="text-xs text-[#94a3b8]">École Polytechnique Fédérale de Lausanne (EPFL)</p>
+//         </div>
+        
+//         <div className="flex gap-4">
+//           <a 
+//             href="https://github.com/epfl-ada/ada-2025-project-apesstrongtogether2025" 
+//             target="_blank" 
+//             rel="noopener noreferrer"
+//             className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#101828] text-white text-sm font-bold hover:bg-[#f97316] transition-all shadow-md"
+//           >
+//             <span>Project Repository</span>
+//           </a>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 
 type SpiderCluster = {
@@ -1684,16 +1753,17 @@ const App = () => {
           <PartThree />
           <PartFour />
           <Conclusion />
+          <TeamSection /> 
           <footer className="border-t border-[#ebe9e4] bg-white py-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-sm text-[#475467] md:flex-row md:justify-between">
+       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-sm text-[#475467] md:flex-row md:justify-between">
         <p>© 2025 ApesStrongTogether Team </p>
-        <div className="flex items-center gap-4">
+        {/* <div className="flex items-center gap-4">
           <Github className="h-5 w-5 cursor-pointer" />
           <Share2 className="h-5 w-5 cursor-pointer" />
           <BookOpen className="h-5 w-5 cursor-pointer" />
+          </div> */}
         </div>
-      </div>
-    </footer>
+        </footer>
         </main>
       </div>
     );
