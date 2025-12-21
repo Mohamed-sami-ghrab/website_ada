@@ -86,11 +86,11 @@ const Opening = () => {
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Interactions</p>
-            <p className="font-semibold text-[#101828]">~1M posts and comments</p>
+            <p className="font-semibold text-[#101828]">~500K+ posts and comments</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Period</p>
-            <p className="font-semibold text-[#101828]">2013–2016</p>
+            <p className="font-semibold text-[#101828]">2014–2017</p>
           </div>
         </div>
       </section>
@@ -98,7 +98,7 @@ const Opening = () => {
       {/* Interactive Opening Quiz */}
       <section className="rounded-3xl border border-dashed border-[#f97316] bg-gradient-to-br from-[#fff7ef] to-white p-8 space-y-6">
         <div className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#101828]">Opening — When Anger Sounds Intelligent</h2>
+          <h2 className="text-2xl font-semibold text-[#101828]">Opening - When Anger Sounds Intelligent</h2>
           <p className="text-lg leading-relaxed text-[#475467]">
             Picture this: It's 2015. Somewhere on Reddit, someone is furious. Not mildly annoyed. Furious. They're about to write the angriest comment of their online life. 
             <span className="block mt-2 font-medium text-[#101828]">Which of these do you think is the "toxic" comment?</span>
@@ -195,7 +195,7 @@ const Introduction = () => (
     </div>
 
     <div className="space-y-4">
-      <h3 className="text-xl font-semibold text-[#101828]">A Familiar Assumption — And a Doubt</h3>
+      <h3 className="text-xl font-semibold text-[#101828]">A Familiar Assumption - And a Doubt</h3>
       <p className="text-[#475467] leading-relaxed">
         Toxic messages are often assumed to be short, messy, poorly written bursts of frustration.
         But what if negativity hides behind long sentences, complex vocabulary, and carefully structured reasoning?
@@ -667,130 +667,6 @@ const PartTwo = () => {
   );
 };
 
-// const PartThree = () => {
-//   return (
-//     <section className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-10" id="part3">
-//       {/* Header */}
-//       <div className="space-y-4">
-//         <p className="text-xs uppercase tracking-[0.5em] text-[#f97316] font-semibold">Part 3</p>
-//         <h2 className="text-3xl font-semibold text-[#101828]">The Complexity Paradox</h2>
-//         <h3 className="text-xl font-medium text-[#475467]">Why Grammar Doesn’t Predict Sentiment</h3>
-//         <p className="text-[#475467] leading-relaxed text-lg">
-//           By this point in the story, a pattern has become hard to ignore. In Parts 1 and 2, the same signals kept resurfacing. Anger. Negativity. Emotional intensity. They dominated the clustering. They shaped network behavior. They predicted whether links would attack or inform.
-//         </p>
-//         <p className="text-[#101828] font-semibold italic">
-//           Which raised an uncomfortable question: If emotion explains so much… does linguistic complexity explain anything at all?
-//         </p>
-//       </div>
-
-//       {/* A Suspicion Worth Testing */}
-//       <div className="space-y-4">
-//         <h3 className="text-xl font-semibold text-[#101828]">A Suspicion Worth Testing</h3>
-//         <p className="text-[#475467] leading-relaxed">
-//           Intuitively, we often associate complex language with restraint, nuance, and calm reasoning. Long sentences. Sophisticated vocabulary. Careful syntax. But intuition is not evidence.
-//         </p>
-//         <p className="text-[#475467] leading-relaxed">
-//           So we asked a precise question: <span className="font-medium text-[#101828]">If we strip away emotion entirely, does structural complexity still predict whether a message is positive or negative?</span>
-//         </p>
-//       </div>
-
-//       {/* Methodological Shift */}
-//       <div className="space-y-4">
-//         <h3 className="text-xl font-semibold text-[#101828]">A Deliberate Methodological Shift</h3>
-//         <p className="text-[#475467] leading-relaxed">
-//           In Part 1, we intentionally mixed everything together: emotional signals, grammatical markers, cognitive cues, and structural traits. Emotion overwhelmed everything else.
-//         </p>
-//         <p className="text-[#475467] leading-relaxed">
-//           So for Part 3, we did something counterintuitive but necessary: <span className="font-bold text-[#101828]">we removed emotion from the equation entirely.</span> No anger. No positivity. No sentiment scores. Only structure.
-//         </p>
-//       </div>
-
-//       {/* The Five Metrics */}
-//       <div className="space-y-6">
-//         <h3 className="text-xl font-semibold text-[#101828]">Measuring Complexity Without Emotion</h3>
-//         <p className="text-[#475467] leading-relaxed">
-//           We reduced language to five carefully chosen complexity metrics:
-//         </p>
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-//           {[
-//             { name: "Lexical Diversity", desc: "How varied is the vocabulary? Repetition lowers complexity. Variety increases it A post that reuses the same words again and again scores low. One that draws from a broad vocabulary scores high." },
-//             { name: "Long Word Ratio", desc: "How often does a writer use long words? Short, common words keep language simple. Longer words usually signal more specialized or formal expression" },
-//             { name: "Readability (ARI)", desc: "How hard is the text to read? The Automated Readability Index estimates the education level required to understand a message. Lower scores correspond to simple prose; higher scores indicate denser, more academic writing. " },
-//             { name: "Vocabulary Sophistication", desc: "What is the average word length? This captures nuance not visible through counts alone. Two posts can be the same length, but one may rely on short, common words while the other uses longer, more specialized terms." },
-//             { name: "Syntactic Complexity", desc: "How elaborate are the sentences? Short sentences convey information efficiently. Longer ones allow for qualification, nuance, and structure. This metric captures how much grammatical machinery a writer deploys." }
-//           ].map((metric) => (
-//             <div key={metric.name} className="p-5 rounded-xl border border-[#ecebe7] bg-[#fcfcfb]">
-//               <p className="font-bold text-[#101828] mb-2">{metric.name}</p>
-//               <p className="text-sm text-[#475467]">{metric.desc}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-
-//       {/* Two Ways to Measure */}
-//       <div className="space-y-4">
-//         <h3 className="text-xl font-semibold text-[#101828]">Two Ways to Measure Complexity</h3>
-//         <p className="text-[#475467] leading-relaxed">
-//           To avoid building our conclusions on a fragile choice, we deliberately took two complementary approaches:
-//         </p>
-//         <ul className="space-y-3 ml-4">
-//           <li className="text-[#475467]"><strong>Method 1 - The Simple Average:</strong> Normalized metrics computed into a straightforward mean for transparency.</li>
-//           <li className="text-[#475467]"><strong>Method 2 - Principal Component Analysis (PCA):</strong> Extracting independent dimensions to remove overlap and double-counting.</li>
-//         </ul>
-//       </div>
-
-//       {/* The Result - Cohen's d Table */}
-//       <div className="space-y-6 pt-6 border-t border-[#ecebe7]">
-//         <h3 className="text-2xl font-semibold text-[#101828]">The Result — Complexity Doesn’t Matter</h3>
-//         <p className="text-[#475467] leading-relaxed">
-//           When we compare emotional features, the difference is clear. But when we look at complexity, everything collapses. Across all seven complexity measures, effect sizes (|d|) stay below the threshold of meaningful difference.
-//         </p>
-        
-//         <div className="my-8">
-//           <p className="text-sm font-semibold text-[#101828] mb-4">TABLEAU OF BIGGEST COHEN D COEFF</p>
-//           <div className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm p-4">
-//              {/* Placeholder for the table or plot showing the Cohen's d values */}
-//              <div className="h-64 flex items-center justify-center text-gray-400 italic">
-//                [Insert Plot: Tableau of Biggest Cohen d Coefficients]
-//              </div>
-//           </div>
-          
-//         </div>
-//       </div>
-
-//       {/* Violin Plot Section */}
-//       <div className="space-y-6">
-//         <h3 className="text-xl font-semibold text-[#101828]">Seeing the Absence: When the Data Looks Flat</h3>
-//         <p className="text-[#475467] leading-relaxed">
-//           Emotional Language shows a clear separation; Complexity shows nothing to see. The two curves sit almost perfectly on top of each other.
-//         </p>
-        
-//         <div className="my-8">
-//           <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
-//             <div className="h-96 flex items-center justify-center text-gray-400 italic">
-//                [VIOLIN PLOT: Sentiment vs Complexity Distributions]
-//             </div>
-//           </figure>
-          
-//           <p className="text-sm text-[#475467] text-center italic mt-4">
-//             Emotional features (left) separate sentiment cleanly; complexity (right) does not.
-//           </p>
-//         </div>
-//       </div>
-
-//       {/* Final Paradox Hook */}
-//       <div className="bg-[#101828] text-white p-8 rounded-3xl space-y-4 shadow-xl">
-//         <h3 className="text-2xl font-semibold text-[#f97316]">The Complexity Paradox</h3>
-//         <p className="text-xl font-light leading-relaxed">
-//           "Linguistic sophistication does not temper negativity. Long sentences do not calm hostility. Advanced vocabulary does not signal positivity. The paradox is now clear: complexity feels meaningful to us as readers, but in aggregate, it explains almost nothing about sentiment."
-//         </p>
-//         <p className="text-sm uppercase tracking-widest text-[#94a3b8] font-bold border-t border-white/10 pt-4">
-//           Next: Can any structure-based model do better, or does sentiment always win?
-//         </p>
-//       </div>
-//     </section>
-//   );
-// };
 
 
 const PartThree = () => {
@@ -1448,7 +1324,7 @@ const Navbar = () => {
             onClick={() => scrollToSection('opening')}
             className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
           >
-            Start
+            Introduction
           </button>
           
           {[1, 2, 3, 4].map((num) => (
@@ -1465,7 +1341,7 @@ const Navbar = () => {
             onClick={() => scrollToSection('conclusion')}
             className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
           >
-            End
+            Conclusion
           </button>
         </div>
 
@@ -1492,20 +1368,21 @@ const App = () => {
           <PartThree />
           <PartFour />
           <Conclusion />
+          <footer className="border-t border-[#ebe9e4] bg-white py-8">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-sm text-[#475467] md:flex-row md:justify-between">
+        <p>© 2025 ApesStrongTogether Team </p>
+        <div className="flex items-center gap-4">
+          <Github className="h-5 w-5 cursor-pointer" />
+          <Share2 className="h-5 w-5 cursor-pointer" />
+          <BookOpen className="h-5 w-5 cursor-pointer" />
+        </div>
+      </div>
+    </footer>
         </main>
       </div>
     );
 
-    // <footer className="border-t border-[#ebe9e4] bg-white py-8">
-    //   <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-sm text-[#475467] md:flex-row md:justify-between">
-    //     <p>© 2024 ApesStrongTogether Team · Clean story updated from clean_story.txt</p>
-    //     <div className="flex items-center gap-4">
-    //       <Github className="h-5 w-5 cursor-pointer" />
-    //       <Share2 className="h-5 w-5 cursor-pointer" />
-    //       <BookOpen className="h-5 w-5 cursor-pointer" />
-    //     </div>
-    //   </div>
-    // </footer>
+
   // </div>
   };
 
