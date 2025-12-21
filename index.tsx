@@ -67,6 +67,115 @@ const quizOptions = [
   }
 ];
 
+const Opening = () => (
+  <div className="space-y-8">
+    {/* Hero Section */}
+    <section className="rounded-3xl border border-[#ebe9e4] bg-white p-10 shadow-[0_25px_60px_-35px_rgba(15,23,42,0.25)]">
+      <p className="text-xs uppercase tracking-[0.6em] text-[#f97316]">2024 data journalism | Reddit</p>
+      <h1 className="mt-4 text-4xl font-semibold leading-tight text-[#101828] md:text-5xl">The Language Paradox of Reddit</h1>
+      <p className="mt-6 text-lg leading-relaxed text-[#475467]">
+        We expected angry Redditors to sound dumb. Instead we found structured sentences, careful grammar, and intentional vocabulary. This narrative explains how complexity failed to account for toxicity—and what actually does.
+      </p>
+      <div className="mt-8 grid gap-4 text-sm text-[#475467] md:grid-cols-3">
+        <div>
+          <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Scope</p>
+          <p className="font-semibold text-[#101828]">850K+ subreddit links</p>
+        </div>
+        <div>
+          <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Interactions</p>
+          <p className="font-semibold text-[#101828]">~1M posts and comments</p>
+        </div>
+        <div>
+          <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Period</p>
+          <p className="font-semibold text-[#101828]">2013–2016</p>
+        </div>
+      </div>
+    </section>
+
+    {/* Narrative Hook */}
+    <section className="rounded-3xl border border-dashed border-[#f97316] bg-gradient-to-br from-[#fff7ef] to-white p-8">
+      <h2 className="text-2xl font-semibold text-[#101828]">Opening — When Anger Sounds Intelligent</h2>
+      <p className="mt-4 text-lg leading-relaxed text-[#475467]">
+        Picture this: It's 2015. Somewhere on Reddit, someone is furious. Not mildly annoyed. Furious. They're about to write the angriest comment of their online life.
+      </p>
+      <p className="mt-2 text-lg font-semibold text-[#101828]">
+        A) "THIS IS COMPLETE GARBAGE!!!"<br />
+        B) "I find your methodology profoundly inadequate and your conclusions demonstrably erroneous."
+      </p>
+      <p className="mt-4 text-base text-[#475467]">
+        If you picked A, you're not alone. The internet troll in our imagination is a keyboard-smashing caveman. But the data told another tale: anger delivered in paragraphs, with perfect grammar. That's the mystery we unpack in this exploration.
+      </p>
+    </section>
+  </div>
+);
+
+const Introduction = () => (
+  <section id="opening" className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
+    <h2 className="text-3xl font-semibold text-[#101828]">Introduction: Decoding Reddit's Linguistic Landscape</h2>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-semibold text-[#101828]">A City Made of Words</h3>
+      <p className="text-[#475467] leading-relaxed">
+        Reddit is often described as the front page of the internet. In reality, it looks more like a vast digital city.
+        Thousands of communities coexist there, each built around a topic, a passion, a question, or sometimes just a shared sense of humor.
+        Every day, millions of users post, reply, argue, explain, praise, mock, support, and contradict each other.
+      </p>
+      
+      <div className="my-8 space-y-3">
+        <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
+          <iframe
+            // src={`${assetBase}activity.html`}
+            title="Community activity over time"
+            className="h-[580px] w-full min-h-[420px] border-0"
+            loading="lazy"
+          />
+        </figure>
+        <p className="text-sm text-[#475467]">
+          The activity graph shows how threads ripple across subreddits; every jump is another community talking to someone else.
+        </p>
+      </div>
+
+      <p className="text-[#475467] leading-relaxed">
+        If online discourse has a pulse, Reddit is where you can feel it. But beneath the surface lies a fascinating question: 
+        <span className="font-medium text-[#101828]"> Does the way we write reveal how we interact?</span>
+      </p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-semibold text-[#101828]">A Familiar Assumption — And a Doubt</h3>
+      <p className="text-[#475467] leading-relaxed">
+        Toxic messages are often assumed to be short, messy, poorly written bursts of frustration.
+        But what if negativity hides behind long sentences, complex vocabulary, and carefully structured reasoning?
+      </p>
+      <p className="text-[#475467] leading-relaxed font-medium italic">
+        In other words: does being negative mean being linguistically simple?
+      </p>
+    </div>
+
+    <div className="space-y-4">
+      <h3 className="text-xl font-semibold text-[#101828]">How the Story Unfolds</h3>
+      <p className="text-[#475467] leading-relaxed">
+        Our investigation unfolds in three steps:
+      </p>
+      <div className="grid gap-4 md:grid-cols-3 pt-2">
+        <div className="rounded-xl bg-[#f8fafc] p-4 border border-[#e2e8f0]">
+          <span className="text-[#f97316] font-bold">01. Styles</span>
+          <p className="text-sm text-[#475467] mt-1">Clustering Reddit into five distinct language profiles.</p>
+        </div>
+        <div className="rounded-xl bg-[#f8fafc] p-4 border border-[#e2e8f0]">
+          <span className="text-[#f97316] font-bold">02. Complexity</span>
+          <p className="text-sm text-[#475467] mt-1">Testing the hypothesis that "smart" language is less negative.</p>
+        </div>
+        <div className="rounded-xl bg-[#f8fafc] p-4 border border-[#e2e8f0]">
+          <span className="text-[#f97316] font-bold">03. Prediction</span>
+          <p className="text-sm text-[#475467] mt-1">Using Random Forest models to find what actually drives hostility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+
 const PartOne = () => {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -104,7 +213,7 @@ const PartOne = () => {
   ];
 
   return (
-    <section className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-10">
+    <section className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-10" id="part1">
       {/* Header */}
       <div className="space-y-4">
         <p className="text-xs uppercase tracking-[0.5em] text-[#f97316] font-semibold">Part 1</p>
@@ -161,7 +270,7 @@ const PartOne = () => {
         <div className="my-8 space-y-3">
           <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
             <iframe
-              src={`${assetBase}pca_projection.html`}
+              // src={`${assetBase}pca_projection.html`}
               title="PCA Map"
               className="h-[520px] w-full border-0 rounded-xl bg-white shadow-inner"
             />
@@ -256,46 +365,404 @@ const PartOne = () => {
   );
 };
 
-const acts = [
-  {
-    title: 'Act I — The Personalities of Reddit',
-    subtitle: 'Who writes like whom? Clustering 32 linguistic features uncovered five distinct voices.',
-    body: [
-      'We stopped caring about topics and only measured how people spoke: sentence length, vocabulary diversity, emotional markers, pronoun patterns.',
-      'A PCA boat plot let us see the five clusters float apart. None were better—just different linguistic worlds.',
-      'Radar plots and spider charts turned each cluster into a personality with weapons, habitats, and catchphrases.',
-      'Reddit is shaped by voices, not just communities. Every post sounds like one of these archetypes.'
-    ]
-  },
-  {
-    title: 'Act II — The Paradox of Complexity',
-    subtitle: 'Nothing we measured in grammar predicted toxicity.',
-    body: [
-      'We engineered metrics for lexical diversity, readability, syntactic depth, sentence complexity, and word length.',
-      'PCA projections, distributions, and hypothesis tests all returned the same conclusion: there is no meaningful gap between kind and cruel posts.',
-      'The Firestarters keep structure, punctuation, and grammar intact. Their camouflage makes them sound authoritative rather than childish.'
-    ],
-    hook: 'We tested EVERYTHING: vocabulary sophistication ❌ sentence complexity ❌ readability scores ❌ word length ❌. None of it predicted whether someone was being kind or cruel.'
-  },
-  {
-    title: 'Act III — What Actually Predicts Negativity',
-    subtitle: 'Sentiment lives in the dictionary, not the grammar book.',
-    body: [
-      'We swapped the grammar microscope for a dictionary lens. Correlation metrics and a Random Forest model pointed at the same truth.',
-      'Emotion words, negations, anxiety markers, and certainty terms climbed to the top of the podium.',
-      'You can construct a cathedral of syntax, but if the bricks are malice, it is still a toxic structure. Complexity alone is silent.'
-    ]
-  },
-  {
-    title: 'Act IV — The Network Doesn\'t Lie',
-    subtitle: 'Interaction patterns reveal how negativity flows.',
-    body: [
-      'We recomposed the Reddit graph by linguistic personality and marked the thread between clusters.',
-      'Toxic communities are outward-facing; they mostly talk to the Helpers rather than hiding in echo chambers.',
-      'Nearly 70% of toxic links target the Tech Support cluster because toxicity needs an audience, and the Helpers always answer.'
-    ]
-  }
-];
+const PartTwo = () => {
+  const [activeFinding, setActiveFinding] = useState(0);
+
+  const findings = [
+    {
+      title: "Finding 1 - Toxic Communities Are Highly Active Linkers",
+      content: "The first pattern emerges immediately. Communities that use more toxic/satirical language tend to post more outgoing links to other subreddits. The correlation is moderate but robust (r ≈ +0.25).",
+      insight: "This matters because it breaks a common assumption: Toxic communities are not isolated echo chambers. They are outward-facing. Subreddits built around mockery, outrage, or satire constantly reference other communities to criticize posts, document drama, or showcase 'bad takes.' They act as meta-commentary hubs, pulling content from across Reddit and reframing it through a hostile lens."
+    },
+    {
+      title: "Finding 2 - Toxic Language Predicts Negative Linking",
+      content: "The proportion of toxic/satirical language in a subreddit is strongly and negatively correlated with the sentiment of its outgoing links (r ≈ −0.72). This is the strongest relationship in the entire analysis.",
+      insight: "In practical terms, this means knowing a community’s language style allows you to predict, with high confidence, whether its links will be hostile or neutral. Links in these communities are not neutral references—they are weapons. Toxic language communities don't just stay negative internally; they export negativity through the network."
+    },
+    {
+      title: "Finding 3 - Formal Language Predicts Constructive Linking",
+      content: "On the other end of the spectrum, subreddits that use more standard, structured language tend to post links with more positive or neutral sentiment (r ≈ +0.27).",
+      insight: "Communities focused on expertise and problem-solving (like r/techsupport or r/legaladvice) link outward to documentation, tutorials, and clarifying explanations. Here, links are not commentary, they are tools. These communities act as information brokers, connecting users to useful content rather than amplifying conflict."
+    },
+    {
+      title: "Non-Finding - Popularity Is Unrelated",
+      content: "One might expect language style to influence popularity. It doesn’t. Across all clusters, correlations with in-degree (how often a community is linked to) are weak or nonexistent.",
+      insight: "What determines popularity is largely topic, not tone. This reveals an asymmetry: communities control how they act (who they link to), but they have little control over how much attention they receive. Language style predicts agency, not reputation."
+    }
+  ];
+
+  return (
+    <section className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-10" id="part2">
+      <div className="space-y-4">
+        <p className="text-xs uppercase tracking-[0.5em] text-[#f97316] font-semibold">Part 2</p>
+        <h2 className="text-3xl font-semibold text-[#101828]">How Language Style Shapes Interaction</h2>
+        <p className="text-[#475467] leading-relaxed text-lg">
+          To answer this, we stepped up one level: from posts to communities. For each of 444 active subreddits, we built a language profile: 
+          <span className="font-medium text-[#101828]"> what fraction of its posts belong to each cluster.</span>
+        </p>
+      </div>
+
+      <div className="space-y-4">
+        <p className="text-[#475467] leading-relaxed">
+          We then combined this with network metrics: how often a community links out to others (out-degree), how often it is linked to (in-degree), and the average sentiment of its outgoing links. Finally, we computed correlations between language composition and network behavior.
+        </p>
+        
+        <div className="my-8 space-y-3">
+          <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm p-4">
+            <iframe
+              // src={`${assetBase}correlation_matrix.html`}
+              title="Correlation Matrix"
+              className="h-[550px] w-full border-0 rounded-xl"
+              loading="lazy"
+            />
+          </figure>
+          <p className="text-sm text-[#475467] text-center italic">
+            The correlation matrix summarizes the story: while many values are small, a few stand out sharply.
+          </p>
+        </div>
+        
+      </div>
+
+      <div className="space-y-6 pt-6 border-t border-[#ecebe7]">
+        <h3 className="text-2xl font-semibold text-[#101828]">The Story the Data Tells</h3>
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Findings Navigation */}
+          <div className="md:w-1/3 flex flex-col gap-2">
+            {findings.map((f, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveFinding(i)}
+                className={`text-left p-4 rounded-xl border transition-all ${
+                  activeFinding === i 
+                  ? 'border-[#f97316] bg-[#fff7ef] text-[#101828] shadow-sm ring-1 ring-[#f97316]' 
+                  : 'border-[#ecebe7] bg-white text-[#475467] hover:border-[#f97316]/30'
+                }`}
+              >
+                <p className="text-xs font-bold text-[#f97316] uppercase mb-1">Observation {i + 1}</p>
+                <p className="text-sm font-semibold">{f.title.split(' - ')[1] || f.title}</p>
+              </button>
+            ))}
+          </div>
+
+          {/* Findings Detail Display */}
+          <div className="md:w-2/3 p-8 rounded-2xl border border-[#ecebe7] bg-[#fcfcfb] min-h-[350px] flex flex-col justify-center">
+            <h4 className="text-xl font-bold text-[#101828] mb-4">{findings[activeFinding].title}</h4>
+            <p className="text-[#475467] mb-6 leading-relaxed text-lg">{findings[activeFinding].content}</p>
+            <div className="bg-white p-6 rounded-xl border border-[#ecebe7] shadow-sm">
+              <p className="text-xs uppercase tracking-widest text-[#f97316] font-bold mb-3">Why this matters</p>
+              <p className="text-[#101828] leading-relaxed italic">"{findings[activeFinding].insight}"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-6 pt-10 border-t border-[#ecebe7]">
+        <h3 className="text-2xl font-semibold text-[#101828]">The Big Picture</h3>
+        <p className="text-[#475467] leading-relaxed">
+          Taken together, these findings paint a coherent picture: Language style is not just a way of speaking; it is a way of interacting with the network.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-5 rounded-2xl bg-[#fef2f2] border border-[#fee2e2]">
+            <p className="font-bold text-[#991b1b] mb-2">Toxic/Satirical</p>
+            <p className="text-sm text-[#991b1b]">Active linkers and powerful amplifiers of negativity.</p>
+          </div>
+          <div className="p-5 rounded-2xl bg-[#f0fdf4] border border-[#dcfce7]">
+            <p className="font-bold text-[#166534] mb-2">Formal/Expertise</p>
+            <p className="text-sm text-[#166534]">Constructive brokers focused on information sharing.</p>
+          </div>
+          <div className="p-5 rounded-2xl bg-[#f8fafc] border border-[#e2e8f0]">
+            <p className="font-bold text-[#334155] mb-2">Casual/Meme</p>
+            <p className="text-sm text-[#334155]">Inward-focused, oriented toward internal entertainment.</p>
+          </div>
+        </div>
+        <div className="mt-8 p-6 bg-[#101828] text-white rounded-2xl border-l-8 border-[#f97316]">
+          <p className="text-xl font-medium leading-relaxed italic">
+            "Reddit behaves less like a collection of personalities and more like a collection of situations. And if language style shapes behavior so strongly, does linguistic complexity itself explain negativity?"
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const PartThree = () => {
+  return (
+    <section className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-10" id="part3">
+      {/* Header */}
+      <div className="space-y-4">
+        <p className="text-xs uppercase tracking-[0.5em] text-[#f97316] font-semibold">Part 3</p>
+        <h2 className="text-3xl font-semibold text-[#101828]">The Complexity Paradox</h2>
+        <h3 className="text-xl font-medium text-[#475467]">Why Grammar Doesn’t Predict Sentiment</h3>
+        <p className="text-[#475467] leading-relaxed text-lg">
+          By this point in the story, a pattern has become hard to ignore. In Parts 1 and 2, the same signals kept resurfacing. Anger. Negativity. Emotional intensity. They dominated the clustering. They shaped network behavior. They predicted whether links would attack or inform.
+        </p>
+        <p className="text-[#101828] font-semibold italic">
+          Which raised an uncomfortable question: If emotion explains so much… does linguistic complexity explain anything at all?
+        </p>
+      </div>
+
+      {/* A Suspicion Worth Testing */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-semibold text-[#101828]">A Suspicion Worth Testing</h3>
+        <p className="text-[#475467] leading-relaxed">
+          Intuitively, we often associate complex language with restraint, nuance, and calm reasoning. Long sentences. Sophisticated vocabulary. Careful syntax. But intuition is not evidence.
+        </p>
+        <p className="text-[#475467] leading-relaxed">
+          So we asked a precise question: <span className="font-medium text-[#101828]">If we strip away emotion entirely, does structural complexity still predict whether a message is positive or negative?</span>
+        </p>
+      </div>
+
+      {/* Methodological Shift */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-semibold text-[#101828]">A Deliberate Methodological Shift</h3>
+        <p className="text-[#475467] leading-relaxed">
+          In Part 1, we intentionally mixed everything together: emotional signals, grammatical markers, cognitive cues, and structural traits. Emotion overwhelmed everything else.
+        </p>
+        <p className="text-[#475467] leading-relaxed">
+          So for Part 3, we did something counterintuitive but necessary: <span className="font-bold text-[#101828]">we removed emotion from the equation entirely.</span> No anger. No positivity. No sentiment scores. Only structure.
+        </p>
+      </div>
+
+      {/* The Five Metrics */}
+      <div className="space-y-6">
+        <h3 className="text-xl font-semibold text-[#101828]">Measuring Complexity Without Emotion</h3>
+        <p className="text-[#475467] leading-relaxed">
+          We reduced language to five carefully chosen complexity metrics:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { name: "Lexical Diversity", desc: "How varied is the vocabulary? Repetition lowers complexity. Variety increases it A post that reuses the same words again and again scores low. One that draws from a broad vocabulary scores high." },
+            { name: "Long Word Ratio", desc: "How often does a writer use long words? Short, common words keep language simple. Longer words usually signal more specialized or formal expression" },
+            { name: "Readability (ARI)", desc: "How hard is the text to read? The Automated Readability Index estimates the education level required to understand a message. Lower scores correspond to simple prose; higher scores indicate denser, more academic writing. " },
+            { name: "Vocabulary Sophistication", desc: "What is the average word length? This captures nuance not visible through counts alone. Two posts can be the same length, but one may rely on short, common words while the other uses longer, more specialized terms." },
+            { name: "Syntactic Complexity", desc: "How elaborate are the sentences? Short sentences convey information efficiently. Longer ones allow for qualification, nuance, and structure. This metric captures how much grammatical machinery a writer deploys." }
+          ].map((metric) => (
+            <div key={metric.name} className="p-5 rounded-xl border border-[#ecebe7] bg-[#fcfcfb]">
+              <p className="font-bold text-[#101828] mb-2">{metric.name}</p>
+              <p className="text-sm text-[#475467]">{metric.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Two Ways to Measure */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-semibold text-[#101828]">Two Ways to Measure Complexity</h3>
+        <p className="text-[#475467] leading-relaxed">
+          To avoid building our conclusions on a fragile choice, we deliberately took two complementary approaches:
+        </p>
+        <ul className="space-y-3 ml-4">
+          <li className="text-[#475467]"><strong>Method 1 - The Simple Average:</strong> Normalized metrics computed into a straightforward mean for transparency.</li>
+          <li className="text-[#475467]"><strong>Method 2 - Principal Component Analysis (PCA):</strong> Extracting independent dimensions to remove overlap and double-counting.</li>
+        </ul>
+      </div>
+
+      {/* The Result - Cohen's d Table */}
+      <div className="space-y-6 pt-6 border-t border-[#ecebe7]">
+        <h3 className="text-2xl font-semibold text-[#101828]">The Result — Complexity Doesn’t Matter</h3>
+        <p className="text-[#475467] leading-relaxed">
+          When we compare emotional features, the difference is clear. But when we look at complexity, everything collapses. Across all seven complexity measures, effect sizes (|d|) stay below the threshold of meaningful difference.
+        </p>
+        
+        <div className="my-8">
+          <p className="text-sm font-semibold text-[#101828] mb-4">TABLEAU OF BIGGEST COHEN D COEFF</p>
+          <div className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm p-4">
+             {/* Placeholder for the table or plot showing the Cohen's d values */}
+             <div className="h-64 flex items-center justify-center text-gray-400 italic">
+               [Insert Plot: Tableau of Biggest Cohen d Coefficients]
+             </div>
+          </div>
+          
+        </div>
+      </div>
+
+      {/* Violin Plot Section */}
+      <div className="space-y-6">
+        <h3 className="text-xl font-semibold text-[#101828]">Seeing the Absence: When the Data Looks Flat</h3>
+        <p className="text-[#475467] leading-relaxed">
+          Emotional Language shows a clear separation; Complexity shows nothing to see. The two curves sit almost perfectly on top of each other.
+        </p>
+        
+        <div className="my-8">
+          <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
+            <div className="h-96 flex items-center justify-center text-gray-400 italic">
+               [VIOLIN PLOT: Sentiment vs Complexity Distributions]
+            </div>
+          </figure>
+          
+          <p className="text-sm text-[#475467] text-center italic mt-4">
+            Emotional features (left) separate sentiment cleanly; complexity (right) does not.
+          </p>
+        </div>
+      </div>
+
+      {/* Final Paradox Hook */}
+      <div className="bg-[#101828] text-white p-8 rounded-3xl space-y-4 shadow-xl">
+        <h3 className="text-2xl font-semibold text-[#f97316]">The Complexity Paradox</h3>
+        <p className="text-xl font-light leading-relaxed">
+          "Linguistic sophistication does not temper negativity. Long sentences do not calm hostility. Advanced vocabulary does not signal positivity. The paradox is now clear: complexity feels meaningful to us as readers, but in aggregate, it explains almost nothing about sentiment."
+        </p>
+        <p className="text-sm uppercase tracking-widest text-[#94a3b8] font-bold border-t border-white/10 pt-4">
+          Next: Can any structure-based model do better, or does sentiment always win?
+        </p>
+      </div>
+    </section>
+  );
+};
+
+const PartFour = () => {
+  return (
+    <section className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-10" id="part4">
+      {/* Header */}
+      <div className="space-y-4">
+        <p className="text-xs uppercase tracking-[0.5em] text-[#f97316] font-semibold">Part 4</p>
+        <h2 className="text-3xl font-semibold text-[#101828]">A Final Test — Letting a Model Decide</h2>
+        <p className="text-[#475467] leading-relaxed text-lg">
+          At this point, the pattern is clear. But before closing the story, we ran one last check.
+        </p>
+      </div>
+
+      {/* Methodology Section */}
+      <div className="space-y-4">
+        <p className="text-[#475467] leading-relaxed">
+          Instead of asking whether complexity matters, we asked a model to tell us what matters most. 
+          We trained a <span className="font-semibold text-[#101828]">Random Forest classifier</span> to predict whether a post contains a positive or negative hyperlink. 
+          Unlike linear models, Random Forests can capture non-linear effects and interactions between features. More importantly, they provide a natural ranking of feature importance.
+        </p>
+        <p className="text-[#475467] leading-relaxed italic border-l-4 border-[#f97316] pl-4 bg-[#fff7ef] py-2">
+          The idea was simple: if complexity truly plays a role, it should appear among the most influential features.
+        </p>
+      </div>
+
+      {/* Feature Importance Plot */}
+      <div className="space-y-6">
+        <h3 className="text-xl font-semibold text-[#101828]">What the Model Cares About</h3>
+        <p className="text-[#475467] leading-relaxed">
+          Below, we display the 20 most important features identified by the Random Forest.
+        </p>
+        
+        <div className="my-8 space-y-3">
+          <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
+            <iframe
+              // src={`${assetBase}feature_importance.html`}
+              title="Random Forest Feature Importance"
+              className="h-[600px] w-full border-0 rounded-xl bg-white"
+              loading="lazy"
+            />
+          </figure>
+          <p className="text-sm text-[#475467] text-center italic">
+            [Insert feature-importance bar chart here]
+          </p>
+        </div>
+      </div>
+
+      {/* The Verdict */}
+      <div className="space-y-6">
+        <p className="text-[#475467] leading-relaxed">
+          The result is unambiguous. At the top of the list, we find the usual suspects:
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="p-4 rounded-xl border border-red-100 bg-red-50 text-red-900 font-medium">
+            ● Negative sentiment scores
+          </div>
+          <div className="p-4 rounded-xl border border-red-100 bg-red-50 text-red-900 font-medium">
+            ● Anger-related LIWC categories
+          </div>
+          <div className="p-4 rounded-xl border border-red-100 bg-red-50 text-red-900 font-medium">
+            ● Emotional polarity indicators
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-[#ecebe7] bg-[#fcfcfb] p-8 text-center">
+          <p className="text-lg text-[#101828] leading-relaxed">
+            Complexity features (<span className="italic">readability, vocabulary sophistication, sentence structure</span>) appear much lower, with marginal influence.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Conclusion = () => {
+  const conclusionHighlights = [
+    {
+      label: "Interactions",
+      text: "Who links out aggressively, who shares constructively, and who stays mostly inward-focused."
+    },
+    {
+      label: "Popularity",
+      text: "Attention is driven by topic, not tone. Being toxic, casual, or formal does not make a community more visible."
+    },
+    {
+      label: "Sophistication",
+      text: "Positive and negative messages share the same level of linguistic sophistication. Long sentences do not soften hostility."
+    }
+  ];
+
+  return (
+    <section id="conclusion" className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-10">
+      {/* Header */}
+      <div className="space-y-4">
+        <p className="text-xs uppercase tracking-[0.5em] text-[#f97316] font-semibold">Final Summary</p>
+        <h2 className="text-3xl font-semibold text-[#101828]">Conclusion — What Reddit Taught Us About Language</h2>
+        <div className="space-y-4 text-[#475467] leading-relaxed text-lg">
+          <p>
+            At first glance, Reddit looks chaotic. Millions of posts, countless communities, endless arguments. 
+            <span className="font-medium text-[#101828]"> But beneath the noise, a structure emerges.</span>
+          </p>
+          <p>
+            We found that Reddit is organized around a small number of recurring language styles, from casual meme talk to formal expertise, from long-form narratives to sharp satire. These styles are not abstract labels: they correspond to real community norms and shape how subreddits behave in the network.
+          </p>
+        </div>
+      </div>
+
+      {/* Impact Section */}
+      <div className="space-y-6">
+        <h3 className="text-xl font-semibold text-[#101828]">Language Style Matters</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {conclusionHighlights.map((item, i) => (
+            <div key={i} className="p-5 rounded-xl border border-[#ecebe7] bg-[#fcfcfb] shadow-sm">
+              <p className="text-[#f97316] font-bold text-xs uppercase tracking-wider mb-2">{item.label}</p>
+              <p className="text-sm text-[#475467] leading-relaxed">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* The Core Finding */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-semibold text-[#101828]">Overturning Intuition</h3>
+        <p className="text-[#475467] leading-relaxed">
+          Most importantly, our analysis overturns a common intuition. <span className="text-[#101828] font-medium">Negativity is not a matter of complexity.</span>
+        </p>
+        <p className="text-[#475467] leading-relaxed italic border-l-4 border-[#f97316] pl-4 bg-[#fff7ef] py-3">
+          Rich vocabulary does not imply kindness. What separates constructive discourse from toxic discourse is not grammar, it is emotion. Anger, negativity, and affective word choice dominate at every level: clusters, communities, individual posts, and predictive models.
+        </p>
+      </div>
+
+      {/* Final Visual/Diagram Placeholder */}
+      <div className="my-10">
+        <div className="rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] p-8 text-center">
+          <p className="text-[#475467] mb-4 font-medium italic text-lg">
+            "Reddit is not a battlefield between ‘smart’ and ‘stupid’ language. It is a place where people choose how to express emotion depending on context."
+          </p>
+          
+        </div>
+      </div>
+
+      {/* Closing Statement */}
+      <div className="space-y-6 pt-6 border-t border-[#ecebe7]">
+        <div className="bg-[#101828] text-white p-8 rounded-2xl shadow-xl">
+          <h4 className="text-xl font-bold mb-4 text-[#f97316]">The Last Word</h4>
+          <p className="text-gray-300 leading-relaxed text-lg">
+            How you write matters but <span className="text-white font-semibold">what you feel matters more.</span> In Reddit’s vast linguistic ecosystem, that emotional signal travels far beyond a single post, shaping interactions across the entire network.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const conclusionPoints = [
   'Anger is still complex: the internet doesn\'t make us dumb; it makes us emotional.',
@@ -615,439 +1082,95 @@ const SpiderPlot = () => {
   );
 };
 
-const App = () => (
-  <div className="min-h-screen bg-[#fbfbfa] text-[#101828] text-[20px]">
+const Navbar = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -80; 
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
+  return (
     <nav className="sticky top-0 z-50 border-b border-[#ebe9e4] bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        
+        {/* Left Side: Branding */}
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-2xl bg-[#f97316] text-white flex items-center justify-center font-bold">R</div>
-          <div>
+          <div className="hidden sm:block">
             <p className="text-xs uppercase tracking-[0.4em] text-[#f97316]">Hivemind Labs</p>
-            <p className="text-sm font-semibold text-[#101828]">The Language Paradox of Reddit</p>
+            <p className="text-sm font-semibold text-[#101828]">The Language Paradox</p>
           </div>
         </div>
-        <div className="flex items-center gap-4 text-sm text-[#475467]">
-          <Share2 className="h-5 w-5 cursor-pointer" />
-          <Github className="h-5 w-5 cursor-pointer" />
+
+        {/* Center: Navigation - Merged Intro and End */}
+        <div className="flex gap-1 md:gap-2 bg-[#f2f0eb]/50 p-1 rounded-full">
+          <button
+            onClick={() => scrollToSection('opening')}
+            className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
+          >
+            Intro
+          </button>
+          
+          {[1, 2, 3, 4].map((num) => (
+            <button
+              key={num}
+              onClick={() => scrollToSection(`part${num}`)}
+              className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
+            >
+              P{num}
+            </button>
+          ))}
+
+          <button
+            onClick={() => scrollToSection('conclusion')}
+            className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
+          >
+            End
+          </button>
+        </div>
+
+        {/* Right Side Socials */}
+        <div className="flex items-center gap-4">
+          <Share2 className="hidden md:block h-5 w-5 text-[#475467] cursor-pointer" />
+          <Github className="h-5 w-5 text-[#475467] cursor-pointer" />
         </div>
       </div>
     </nav>
+  );
+};
 
-    <main className="mx-auto max-w-6xl px-6 py-12 space-y-16">
-      <section className="rounded-3xl border border-[#ebe9e4] bg-white p-10 shadow-[0_25px_60px_-35px_rgba(15,23,42,0.25)]">
-        <p className="text-xs uppercase tracking-[0.6em] text-[#f97316]">2024 data journalism | Reddit</p>
-        <h1 className="mt-4 text-4xl font-semibold leading-tight text-[#101828] md:text-5xl">The Language Paradox of Reddit</h1>
-        <p className="mt-6 text-lg leading-relaxed text-[#475467]">
-          We expected angry Redditors to sound dumb. Instead we found structured sentences, careful grammar, and intentional vocabulary. This narrative explains how complexity failed to account for toxicity—and what actually does.
-        </p>
-        <div className="mt-8 grid gap-4 text-sm text-[#475467] md:grid-cols-3">
-          <div>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Scope</p>
-            <p className="font-semibold text-[#101828]">850K+ subreddit links</p>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Interactions</p>
-            <p className="font-semibold text-[#101828]">~1M posts and comments</p>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Period</p>
-            <p className="font-semibold text-[#101828]">2013–2016</p>
-          </div>
-        </div>
-      </section>
+const App = () => {
 
-      <section className="rounded-3xl border border-dashed border-[#f97316] bg-gradient-to-br from-[#fff7ef] to-white p-8">
-        <h2 className="text-2xl font-semibold text-[#101828]">Opening — When Anger Sounds Intelligent</h2>
-        <p className="mt-4 text-lg leading-relaxed text-[#475467]">
-          Picture this: It's 2015. Somewhere on Reddit, someone is furious. Not mildly annoyed. Furious. They're about to write the angriest comment of their online life.
-        </p>
-        <p className="mt-2 text-lg font-semibold text-[#101828]">
-          A) "THIS IS COMPLETE GARBAGE!!!"<br />
-          B) "I find your methodology profoundly inadequate and your conclusions demonstrably erroneous."
-        </p>
-        <p className="mt-4 text-base text-[#475467]">
-          If you picked A, you're not alone. The internet troll in our imagination is a keyboard-smashing caveman. But the data told another tale: anger delivered in paragraphs, with perfect grammar. That's the mystery we unpack in this exploration.
-        </p>
-      </section>
-
-      <section className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
-        <h2 className="text-3xl font-semibold text-[#101828]">Introduction: Decoding Reddit's Linguistic Landscape</h2>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-[#101828]">A City Made of Words</h3>
-          <p className="text-[#475467] leading-relaxed">
-            Reddit is often described as the front page of the internet. In reality, it looks more like a vast digital city.
-            Thousands of communities coexist there, each built around a topic, a passion, a question, or sometimes just a shared sense of humor.
-            Every day, millions of users post, reply, argue, explain, praise, mock, support, and contradict each other. Some conversations are friendly. Others are tense. Many are openly hostile.
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            Reddit is noisy. Reddit is alive. And Reddit is opinionated.
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            Between 2014 and 2017 alone, hundreds of thousands of interactions connected communities to one another. Links were shared, references were made, disagreements spilled across subreddit borders. Some of these interactions were clearly positive: expressions of agreement, endorsement, or support. Others were unmistakably negative: criticism, dismissal, or outright hostility.
-          </p>
-          
-          <div className="my-8 space-y-3">
-              <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
-              <iframe
-                  src={`${assetBase}activity.html`}
-                  title="Community activity over time"
-                  className="h-[580px] w-full min-h-[420px] border-0"
-                  loading="lazy"
-              />
-              </figure>
-              <p className="text-sm text-[#475467]">
-              The activity graph shows how threads ripple across subreddits; every jump is another community talking to someone else.
-              </p>
-          </div>
-
-          <p className="text-[#475467] leading-relaxed">
-            If online discourse has a pulse, Reddit is where you can feel it. But beneath the surface of memes, arguments, and advice threads lies a fascinating question: 
-            <span className="font-medium text-[#101828]"> Does the way we write reveal how we interact?</span>
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-[#101828]">A Familiar Assumption — And a Doubt</h3>
-          <p className="text-[#475467] leading-relaxed">
-            When we think about negativity online, we tend to picture it in a very specific way. Anger is loud. Negativity is blunt. Toxic messages are short, messy, poorly written bursts of frustration.
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            But is that actually true? What if negativity doesn’t always shout? What if it argues calmly? What if it hides behind long sentences, complex vocabulary, and carefully structured reasoning?
-          </p>
-          <p className="text-[#475467] leading-relaxed font-medium italic">
-            In other words: does being negative mean being linguistically simple?
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            This question became the starting point of our exploration.
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-[#101828]">Our Guiding Question - How Does Negativity Really Work?</h3>
-          <p className="text-[#475467] leading-relaxed">
-            Rather than asking what people talk about on Reddit, we decided to focus on how they talk. We wanted to understand:
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-[#475467] ml-4">
-              <li>Whether different language styles exist across Reddit,</li>
-              <li>Whether communities tend to specialize in one dominant style or mix many,</li>
-              <li>And whether linguistic complexity has anything to do with how positive or negative a message is.</li>
-          </ul>
-          <p className="text-[#475467] leading-relaxed">
-            To answer this, we followed a simple idea: <span className="text-[#101828] font-medium">instead of assuming how negativity looks, we let the data describe it.</span>
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-[#101828]">How the Story Unfolds</h3>
-          <p className="text-[#475467] leading-relaxed">
-            Our investigation unfolds in three steps.
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            <strong className="text-[#101828]">First</strong>, we look at language styles themselves. Using sentiment-related features, we cluster Reddit messages and uncover five distinct language profiles. We then ask whether subreddits behave like linguistic specialists, or whether they are melting pots of styles.
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            <strong className="text-[#101828]">Next</strong>, we deliberately step away from sentiment altogether. We build a complexity score, based on linguistic structure alone, and test a tempting hypothesis: that more complex language might be less negative. The data has other plans.
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            <strong className="text-[#101828]">Finally</strong>, we try to put our conclusions to the test. If complexity really matters, it should help predict whether a message is negative. We train several classifiers, from simple aggregates to dimensionality reduction and, finally, a Random Forest to see what actually drives negativity.
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            What emerges is not a story about simple versus complex language, but about what truly signals hostility online. And along the way, we learn that negativity on Reddit is far more articulate than we expected.
-          </p>
-        </div>
-      </section>
-
-      <section className="rounded-3xl border border-[#e3e1dd] bg-white p-8 space-y-6">
-        <h2 className="text-2xl font-semibold text-[#101828]">Interlude — Reddit Is Not a Collection of Islands</h2>
-        <p className="text-[#475467]">
-          Silos leak, communities quote each other, argue, link. The graph proved constant movement—interaction is the default.
-        </p>
-        <div className="space-y-3">
-          <figure className="mt-4 overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
-            <iframe
-              src={`${assetBase}activity.html`}
-              title="Community activity over time"
-              className="h-[580px] w-full min-h-[420px] border-0"
-              loading="lazy"
-            />
-          </figure>
-          <p className="text-sm text-[#475467]">
-            The activity graph shows how threads ripple across subreddits; every jump is another community talking to someone else.
-          </p>
-        </div>
-      </section>
-      
-      <PartOne />
-
-      <section className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-10">
-        <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.5em] text-[#f97316] font-semibold">Part 2</p>
-          <h2 className="text-3xl font-semibold text-[#101828]">The Paradox of Complexity</h2>
-          <p className="text-[#475467] leading-relaxed">
-            At this point, we were confident. Surely, if we measured linguistic complexity precisely enough, toxicity would reveal itself[cite: 90, 91]. We expected the angry, toxic cluster (The Firestarters) to have the linguistic fingerprint of a toddler—short words, broken grammar, and simple thoughts[cite: 37, 38]. 
-          </p>
-          <p className="rounded-2xl border border-[#f97316] bg-[#fff7ef] px-6 py-4 text-base font-semibold text-[#ae3415]">
-            "We tested EVERYTHING: Vocabulary sophistication ❌ Sentence complexity ❌ Readability scores ❌ Word length ❌. None of it predicted whether someone was being kind or cruel." [cite: 36]
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-[#101828]">Building the Complexity Microscope</h3>
-          <p className="text-[#475467] leading-relaxed">
-            To test this, we engineered specific complexity metrics designed to capture the "sophistication" of a message regardless of its emotion:
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-[#475467] ml-4">
-            <li><strong className="text-[#101828]">Lexical Diversity:</strong> The variety of unique words used in a single post[cite: 35].</li>
-            <li><strong className="text-[#101828]">Syntactic Depth:</strong> The complexity of sentence structures and nested clauses[cite: 92].</li>
-            <li><strong className="text-[#101828]">Readability Indices:</strong> Standard scores (like Flesch-Kincaid) that estimate the educational level required to read the text[cite: 92].</li>
-          </ul>
-        </div>
-
-        <div className="my-8 space-y-4">
-          <figure className="rounded-2xl border border-[#ecebe7] bg-[#fdfaf6] p-6 shadow-sm">
-            <img
-              src={`${assetBase}link_sentiment.png`}
-              alt="Link sentiment repartition between clusters"
-              className="w-full max-h-[520px] rounded-2xl object-contain"
-              loading="lazy"
-            />
-            <figcaption className="mt-4 text-sm text-[#475467] text-center italic">
-              When we mapped sentiment against complexity, the density showed that kindness and cruelty breathe from the same grammar—they just use different words.
-            </figcaption>
-          </figure>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-[#101828]">The Camouflage Effect</h3>
-          <p className="text-[#475467] leading-relaxed">
-            The data forced us to confront an uncomfortable truth: <span className="font-medium text-[#101828]">being articulate doesn’t make you kind</span>[cite: 67]. The Firestarters don’t talk like toddlers; they talk like frustrated professionals[cite: 94]. 
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            This creates a dangerous <span className="text-[#101828] font-bold">"Camouflage Effect."</span> Toxic comments often look authoritative because they are structurally sound. A well-written insult stings more than a poorly written one because it maintains the facade of a reasoned argument[cite: 39, 40].
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            The Firestarters keep punctuation and grammar intact, proving that while the "bricks" of their message might be malice, the architectural structure is often a cathedral[cite: 45, 101].
-          </p>
-        </div>
-      </section>
-
-
-      <section className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-10">
-        <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.5em] text-[#f97316] font-semibold">Part 3</p>
-          <h2 className="text-3xl font-semibold text-[#101828]">The Interaction Matrix</h2>
-          <p className="text-[#475467] leading-relaxed">
-            Confused by the "Paradox of Complexity," we went back to where this started: the five personalities. If toxicity isn’t about how complicated the sentences are, maybe it’s about <span className="font-medium text-[#101828]">who those sentences are aimed at</span>.
-          </p>
-          <p className="text-[#475467] leading-relaxed">
-            We aggregated the entire Reddit network by language personality to see how these groups talk to one another. The result shattered another common myth: toxic communities aren’t isolated echo chambers. They are deeply, and often aggressively, connected to the rest of the site.
-          </p>
-        </div>
-
-        <div className="space-y-6">
-          <h3 className="text-xl font-semibold text-[#101828]">Mapping the Cross-Talk</h3>
-          <p className="text-[#475467] leading-relaxed">
-            Below is the interaction heatmap. It shows the flow of links between clusters. A darker cell indicates a higher frequency of interaction between those two linguistic styles.
-          </p>
-
-          <div className="my-8 space-y-3">
-            <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
-              <iframe
-              // HEEEEREEEE PUUUUUUUUT
-                // src={`${assetBase}matrix.html`}
-                title="Interaction Matrix between clusters"
-                className="h-[600px] w-full min-h-[500px] border-0 rounded-xl bg-white"
-                loading="lazy"
-              />
-            </figure>
-            <p className="text-sm text-[#475467] italic">
-              The matrix reveals a striking asymmetry: while most clusters talk amongst themselves, the "Firestarters" show a significant preference for targeting specific groups.
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-xl font-semibold text-[#101828]">The Burden of the Helpers</h3>
-          <p className="text-[#475467] leading-relaxed">
-            The data revealed a heartbreaking statistic: <span className="font-bold text-[#101828]">nearly 70% of toxic interactions target "The Tech Support" (The Helpers) cluster</span>. 
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-            <div className="rounded-2xl border border-[#fee2e2] bg-[#fef2f2] p-6">
-              <p className="text-sm font-bold text-[#991b1b] uppercase tracking-wider mb-2">Finding A</p>
-              <p className="text-[#991b1b] font-medium">Toxicity needs an audience. Aggressors don't just want to shout; they want a reaction.</p>
-            </div>
-            <div className="rounded-2xl border border-[#fee2e2] bg-[#fef2f2] p-6">
-              <p className="text-sm font-bold text-[#991b1b] uppercase tracking-wider mb-2">Finding B</p>
-              <p className="text-[#991b1b] font-medium">The Helpers are the most vulnerable because they are the most responsive. They always answer.</p>
-            </div>
-          </div>
-
-          <p className="text-[#475467] leading-relaxed">
-            This suggests that "helpfulness" itself can act as a vulnerability in the Reddit ecosystem. Toxicity doesn't seek out other toxic users—it seeks out the communities that are most likely to engage, explain, and try to resolve conflict.
-          </p>
-        </div>
-
-        <div className="space-y-4 pt-6">
-          <h3 className="text-xl font-semibold text-[#101828]">The Final Tally</h3>
-          <p className="text-[#475467] leading-relaxed">
-            Our investigation concludes that the "Grammar of the Hivemind" is not a hierarchy of intelligence, but a map of behavior. Negativity wears polished grammar, intelligence does not guarantee kindness, and everyone—regardless of their "voice"—is part of the same interconnected web.
-          </p>
-        </div>
-      </section>
-
-      {acts.map((act, index) => (
-        <React.Fragment key={act.title}>
-          <section className="rounded-3xl border border-[#ecebe7] bg-white p-8 space-y-5">
-            <div>
-              <p className="text-xs uppercase tracking-[0.5em] text-[#94a3b8]">{act.title}</p>
-              <h3 className="mt-2 text-2xl font-semibold text-[#101828]">{act.subtitle}</h3>
-            </div>
-            {index === 2 && (
-              <div className="space-y-4">
-                <figure className="rounded-2xl border border-[#ecebe7] bg-[#fdfaf6] p-4">
-                  <img
-                    src={`${assetBase}corrolation.png`}
-                    alt="Correlation of linguistic markers"
-                    className="w-full max-h-[520px] rounded-2xl object-contain"
-                    loading="lazy"
-                  />
-                  <figcaption className="mt-3 text-sm text-[#475467]">
-                    Correlation heatmap pairing sentiment features with negativity scores; the dark bands highlight where word choice matters.
-                  </figcaption>
-                </figure>
-                <figure className="rounded-2xl border border-[#ecebe7] bg-white p-4">
-                  <img
-                    src={`${assetBase}rf.png`}
-                    alt="Random forest feature importances"
-                    className="w-full max-h-[520px] rounded-2xl object-contain"
-                    loading="lazy"
-                  />
-                  <figcaption className="mt-3 text-sm text-[#475467]">
-                    Random Forest feature importances highlighting the vocabulary signals that actually predict negativity.
-                  </figcaption>
-                </figure>
-              </div>
-            )}
-            <div className="space-y-3 text-[#475467]">
-              {act.body.map(paragraph => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-              {act.hook && (
-                <p className="rounded-2xl border border-[#f97316] bg-[#fff7ef] px-4 py-3 text-sm font-semibold text-[#ae3415]">
-                  {act.hook}
-                </p>
-              )}
-              {index === 0 && (
-                <div className="space-y-4 rounded-3xl border border-[#ecebe7] bg-[#f8fafc] p-6">
-                  <p className="text-sm font-semibold text-[#101828]">Spider plot of language cluster |z|-scores</p>
-                  <div className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm">
-                    <SpiderPlot />
-                  </div>
-                  <p className="text-sm text-[#475467]">
-                    Each axis is a normalized |z| value for the top linguistic markers in cluster zero; the slider in the
-                    embedded plot cycles through the five archetypes.
-                  </p>
-                  <figure className="overflow-hidden rounded-2xl border border-[#e0dcd7] bg-white shadow-sm">
-                    <iframe
-                      src={`${assetBase}pca_projection.html`}
-                      title="PCA projection of Reddit language"
-                      className="h-[520px] w-full min-h-[480px] border-0"
-                      loading="lazy"
-                    />
-                    <figcaption className="p-4 text-sm text-[#475467]">
-                      A PCA projection highlights how the linguistic clusters separate across the first two principal components.
-                    </figcaption>
-                  </figure>
-                </div>
-              )}
-              {index === 1 && (
-                <figure className="rounded-2xl border border-[#ecebe7] bg-[#fdfaf6] p-5">
-                  <img
-                    src={`${assetBase}link_sentiment.png`}
-                    alt="Link sentiment repartition between clusters"
-                    className="w-full max-h-[520px] rounded-2xl object-contain"
-                    loading="lazy"
-                  />
-                  <figcaption className="mt-3 text-sm text-[#475467]">
-                    Every thread link now wears a sentiment score. The density of green-to-red gradients shows that kindness
-                    and cruelty breathe from the same grammar but different words.
-                  </figcaption>
-                </figure>
-              )}
-            </div>
-          </section>
-          {index === 0 && (
-            <>
-              <section className="rounded-3xl border border-[#ecebe7] bg-white p-8">
-                <h2 className="text-2xl font-semibold text-[#101828]">Act I Cast — Five Ways of Speaking Online</h2>
-                <div className="mt-6 grid gap-4 md:grid-cols-2">
-                  {personalities.map(personality => (
-                    <article key={personality.name} className="rounded-2xl border border-[#ecebe7] bg-[#f8fafc] p-6">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-semibold text-[#101828]">{personality.emoji} {personality.name}</h3>
-                        <span className="text-xs uppercase tracking-[0.4em] text-[#94a3b8]">Complexity</span>
-                      </div>
-                      <p className="mt-2 text-sm text-[#475467]">{personality.catchphrase}</p>
-                      <p className="mt-3 text-sm font-semibold text-[#101828]">Habitat · {personality.habitat}</p>
-                      <p className="mt-1 text-sm text-[#475467]">{personality.note}</p>
-                      <p className="mt-1 text-sm font-medium text-[#f97316]">{personality.expertise}</p>
-                    </article>
-                  ))}
-                </div>
-              </section>
-              <section className="rounded-3xl border border-[#ecebe7] bg-[#f8fafc] p-8">
-                <h2 className="text-2xl font-semibold text-[#101828]">Quick quiz — What voice do you wear online?</h2>
-                <p className="mt-2 text-sm text-[#475467]">Pick the sentence that feels most natural when you write or reply.</p>
-                <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {quizOptions.map(option => (
-                    <button
-                      key={option.role}
-                      type="button"
-                      className="rounded-2xl border border-[#ebecf0] bg-white px-4 py-4 text-left text-sm text-[#475467] shadow-sm transition hover:-translate-y-0.5"
-                    >
-                      <p className="text-base font-semibold text-[#101828]">{option.role}</p>
-                      <p className="mt-1 text-xs uppercase tracking-[0.35em] text-[#f97316]">Reflective prompt</p>
-                      <p className="mt-1 text-sm">{option.prompt}</p>
-                    </button>
-                  ))}
-                </div>
-                <p className="mt-4 text-xs uppercase tracking-[0.4em] text-[#f97316]">No answers recorded · Just reflection</p>
-              </section>
-            </>
-          )}
-        </React.Fragment>
-      ))}
-
-      <section className="rounded-3xl border border-dashed border-[#f97316] bg-gradient-to-br from-[#fff7ef] to-white p-8 space-y-4">
-        <h2 className="text-2xl font-semibold text-[#101828]">Conclusion — What This Means for the Internet</h2>
-        <div className="space-y-3 text-[#475467]">
-          {conclusionPoints.map(point => (
-            <p key={point} className="text-lg leading-relaxed">
-              {point}
-            </p>
-          ))}
-        </div>
-        <p className="text-sm uppercase tracking-[0.5em] text-[#f97316]">Takeaway</p>
-        <p className="text-[#101828]">
-          Toxicity isn't linguistic simplicity. Sentiment arises from the words themselves. Echo chambers aren't built from grammar—they are built from how communities choose to interact.
-        </p>
-      </section>
-    </main>
-
-    <footer className="border-t border-[#ebe9e4] bg-white py-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-sm text-[#475467] md:flex-row md:justify-between">
-        <p>© 2024 ApesStrongTogether Team · Clean story updated from clean_story.txt</p>
-        <div className="flex items-center gap-4">
-          <Github className="h-5 w-5 cursor-pointer" />
-          <Share2 className="h-5 w-5 cursor-pointer" />
-          <BookOpen className="h-5 w-5 cursor-pointer" />
-        </div>
+    return (
+      <div className="min-h-screen bg-[#fbfbfa] text-[#101828] text-[20px]">
+        <Navbar />
+        <main className="mx-auto max-w-4xl space-y-12 py-12 px-6">
+          <Opening />
+          <Introduction />
+          <PartOne />
+          <PartTwo />
+          <PartThree />
+          <PartFour />
+          <Conclusion />
+        </main>
       </div>
-    </footer>
-  </div>
-);
+    );
+
+    // <footer className="border-t border-[#ebe9e4] bg-white py-8">
+    //   <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-sm text-[#475467] md:flex-row md:justify-between">
+    //     <p>© 2024 ApesStrongTogether Team · Clean story updated from clean_story.txt</p>
+    //     <div className="flex items-center gap-4">
+    //       <Github className="h-5 w-5 cursor-pointer" />
+    //       <Share2 className="h-5 w-5 cursor-pointer" />
+    //       <BookOpen className="h-5 w-5 cursor-pointer" />
+    //     </div>
+    //   </div>
+    // </footer>
+  // </div>
+  };
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
