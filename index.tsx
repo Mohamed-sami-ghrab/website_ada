@@ -257,8 +257,6 @@ const Introduction = () => (
 );
 
 
-
-
 const PartOne = () => {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -589,21 +587,24 @@ const PartTwo = () => {
 
       {/* Correlation Matrix Section */}
       <div className="space-y-6">
-        <h3 className="text-xl font-semibold text-[#101828]">The Correlation Matrix</h3>
-        <p className="text-[#475467] leading-relaxed text-lg">
-          The result is summarized in the correlation matrix shown above. And while many values are small, a few stand out sharply and tell a compelling story.
+    <h3 className="text-xl font-semibold text-[#101828]">The Correlation Matrix</h3>
+    <p className="text-[#475467] leading-relaxed text-lg">
+      The result is summarized in the correlation matrix shown above. And while many values are small, a few stand out sharply and tell a compelling story.
+      </p>
+      <div className="my-8">
+        <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
+          {/* Updated to use the .png file found in your assets */}
+          <img 
+            src={`${assetBase}Correlation_Matrix_Language_Cluster_composition_vs_networkInteraction.png`} 
+            alt="Correlation Matrix showing language cluster composition and network behavior" 
+            className="w-full h-auto rounded-xl bg-white"
+          />
+        </figure>
+        <p className="text-sm text-[#475467] mt-4 italic text-center">
+          The matrix reveals how different language styles correlate with linking behavior across the network.
         </p>
-        <div className="my-8">
-          <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
-            <iframe
-              // src={`${assetBase}correlation_matrix.html`} 
-              title="Correlation Matrix"
-              className="h-[600px] w-full border-0 rounded-xl bg-white"
-            />
-          </figure>
-           
-        </div>
       </div>
+    </div>
 
       {/* Findings Section */}
       <div className="space-y-6 pt-6 border-t border-[#ecebe7]">
@@ -786,24 +787,30 @@ const PartThree = () => {
       </div>
 
       {/* Violin Plot */}
-      <div className="space-y-6">
-        <h3 className="text-2xl font-semibold text-[#101828]">Seeing the Absence: When the Data Looks Flat</h3>
-        <div className="my-8 space-y-4">
-          <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm p-4">
-            <div className="h-96 flex items-center justify-center bg-[#f8fafc] rounded-xl">
-               [VIOLIN PLOT: Emotional Language vs Complexity]
-            </div>
-          </figure>
-          
-          <p className="text-sm text-[#475467] text-center italic">
-            The difference is immediate. In Emotional Language (left), the curves barely touch. In Complexity (right), they overlap almost perfectly.
-          </p>
-        </div>
-        <p className="text-[#475467] leading-relaxed text-lg">
-          This is not a weak effect. <strong>It is the absence of an effect.</strong> Positive and negative posts are written with similar levels of sophistication. 
-          What differs is not <em>how</em> people write—it is <em>which words</em> they choose. Anger versus support. Criticism versus approval.
-        </p>
+<div className="space-y-6">
+  <h3 className="text-2xl font-semibold text-[#101828]">Seeing the Absence: When the Data Looks Flat</h3>
+  <div className="my-8 space-y-4">
+    <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-white shadow-sm p-4">
+      <div className="flex items-center justify-center bg-[#f8fafc] rounded-xl overflow-hidden">
+        {/* Updated with consistent asset name from image_c12e63.png */}
+        <img 
+          src={`${assetBase}Emotional_vs_Complexity_Features_Direct_Visual_Comparison.png`} 
+          alt="Violin Plot: Emotional Language vs Complexity comparison" 
+          className="w-full h-auto max-h-[600px] object-contain"
+        />
       </div>
+    </figure>
+    
+      <p className="text-sm text-[#475467] text-center italic">
+        The difference is immediate. In Emotional Language (left), the curves barely touch. In Complexity (right), they overlap almost perfectly.
+      </p>
+    </div>
+    
+    <p className="text-[#475467] leading-relaxed text-lg">
+      This is not a weak effect. <strong>It is the absence of an effect.</strong> Positive and negative posts are written with similar levels of sophistication. 
+      What differs is not <em>how</em> people write—it is <em>which words</em> they choose. Anger versus support. Criticism versus approval.
+    </p>
+  </div>
 
       {/* Conclusion */}
       <div className="space-y-8 pt-10 border-t border-[#ecebe7]">
@@ -855,18 +862,19 @@ const PartFour = () => {
         </p>
         
         <div className="my-8 space-y-3">
-          <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
-            <iframe
-              // src={`${assetBase}feature_importance.html`}
-              title="Random Forest Feature Importance"
-              className="h-[600px] w-full border-0 rounded-xl bg-white"
-              loading="lazy"
-            />
-          </figure>
-          <p className="text-sm text-[#475467] text-center italic">
-            [Insert feature-importance bar chart here]
-          </p>
-        </div>
+        <figure className="overflow-hidden rounded-2xl border border-[#d6d3cd] bg-[#f8fafc] shadow-sm p-4">
+          <img
+            src={`${assetBase}3_Top20FeaturesRandomForestImportances.png`}
+            alt="Top 20 feature importances from Random Forest model"
+            className="w-full rounded-xl bg-white"
+            loading="lazy"
+          />
+        </figure>
+        <p className="text-sm text-[#475467] text-center italic">
+          Top 20 feature importances according to the Random Forest model.
+        </p>
+      </div>
+
       </div>
 
       {/* The Verdict */}
@@ -977,12 +985,6 @@ const Conclusion = () => {
   );
 };
 
-const conclusionPoints = [
-  'Anger is still complex: the internet doesn\'t make us dumb; it makes us emotional.',
-  'Intelligence and kindness are not the same; polished grammar can still carry malice.',
-  'Communities interact across dialects; the hivemind never settled into isolation.',
-  'Moderation tools should focus on vocabulary and sentiment, not grammatical depth.'
-];
 
 type SpiderCluster = {
   title: string;
@@ -1295,13 +1297,30 @@ const SpiderPlot = () => {
   );
 };
 
+
 const Navbar = () => {
+  // Function to handle smooth scrolling with an offset for the sticky header
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -80; 
+      const yOffset = -80; // This ensures the header doesn't cover the section title
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
+  // Function to handle native sharing or clipboard fallback
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: "The Language Paradox of Reddit",
+        text: "Explore how linguistic styles shape interaction and toxicity on Reddit.",
+        url: window.location.href,
+      })
+      .catch((error) => console.log('Error sharing', error));
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert("Link copied to clipboard!");
     }
   };
 
@@ -1318,38 +1337,59 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Center: Navigation - Merged Intro and End */}
+        {/* Center: Interactive Navigation Parts */}
         <div className="flex gap-1 md:gap-2 bg-[#f2f0eb]/50 p-1 rounded-full">
+          {/* Intro Button */}
           <button
             onClick={() => scrollToSection('opening')}
             className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
           >
-            Introduction
+            Intro
           </button>
           
+          {/* Parts 1-4 Mapping */}
           {[1, 2, 3, 4].map((num) => (
             <button
               key={num}
               onClick={() => scrollToSection(`part${num}`)}
               className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
             >
-              Part{num}
+              P{num}
             </button>
           ))}
 
+          {/* End/Conclusion Button */}
           <button
             onClick={() => scrollToSection('conclusion')}
             className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-[#475467] hover:text-[#f97316] hover:bg-white rounded-full transition-all"
           >
-            Conclusion
+            End
           </button>
         </div>
 
-        {/* Right Side Socials */}
-        <div className="flex items-center gap-4">
-          <Share2 className="hidden md:block h-5 w-5 text-[#475467] cursor-pointer" />
-          <Github className="h-5 w-5 text-[#475467] cursor-pointer" />
+        {/* Right Side: Social Icons & Repository Link */}
+        <div className="flex items-center gap-4 text-sm text-[#475467]">
+          {/* Active Share Link */}
+          <button 
+            onClick={handleShare}
+            className="hover:text-[#f97316] transition-colors p-1"
+            aria-label="Share this story"
+          >
+            <Share2 className="h-5 w-5 cursor-pointer" />
+          </button>
+
+          {/* Active GitHub Link to specific ADA repo */}
+          <a 
+            href="https://github.com/epfl-ada/ada-2025-project-apesstrongtogether2025" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-[#f97316] transition-colors p-1"
+            aria-label="View project on GitHub"
+          >
+            <Github className="h-5 w-5 cursor-pointer" />
+          </a>
         </div>
+        
       </div>
     </nav>
   );
