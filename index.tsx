@@ -495,7 +495,7 @@ const App = () => (
             Reddit is noisy. Reddit is alive. And Reddit is opinionated.
           </p>
           <p className="text-[#475467] leading-relaxed">
-            Between 2014 and 2017 alone, hundreds of thousands of interactions connected communities to one another. Links were shared, references were made, disagreements spilled across subreddit borders. Some of these interactions were clearly positive: expressions of agreement, endorsement, or support. Others were unmistakably negative:criticism, dismissal, or outright hostility.
+            Between 2014 and 2017 alone, hundreds of thousands of interactions connected communities to one another. Links were shared, references were made, disagreements spilled across subreddit borders. Some of these interactions were clearly positive: expressions of agreement, endorsement, or support. Others were unmistakably negative: criticism, dismissal, or outright hostility.
           </p>
           
           <div className="my-8 space-y-3">
